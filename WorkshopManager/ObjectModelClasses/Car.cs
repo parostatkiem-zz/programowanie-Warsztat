@@ -27,8 +27,12 @@ namespace WorkshopManager
             // return (uint)problems.Count;
             return 0;
         }
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
 
-      //  public Car()
+        //  public Car()
     }
 
     

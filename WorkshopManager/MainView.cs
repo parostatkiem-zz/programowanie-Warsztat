@@ -20,13 +20,12 @@ namespace WorkshopManager
         {
             InitializeComponent();
         }
-
-        private void MainView_Load(object sender, EventArgs e)
+        private Car currentlyEditedCar = null;
+        private void RefreshAllData()
         {
-            loadData(true);
             listViewCars.Items.Clear();
             ListViewItem currentItem;
-            foreach(Car c in getAllCars())
+            foreach (Car c in getAllCars())
             {
                 currentItem = new ListViewItem();
                 currentItem.Tag = c;
@@ -35,15 +34,36 @@ namespace WorkshopManager
                 listViewCars.Items.Add(currentItem);
             }
         }
+        private void MainView_Load(object sender, EventArgs e)
+        {
+            loadData(true);
+            RefreshAllData();
+        }
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (currentlySelectedCar() != null)
-              DisplaySingleCarData(currentlySelectedCar());
+
+            if (currentlySelectedCar() == null) return;
+            if(AreThereUnsavedChanges())
+            {
+            
+                DialogResult dialogResult = MessageBox.Show("Wygląda na to, że rozpoczęto edycję danych. Czy na pewno chcesz je odrzucić?", "Potwierdzenie odrzucenia zmian", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DisplaySingleCarData(currentlySelectedCar());
+                }
+            }
+            else
+                DisplaySingleCarData(currentlySelectedCar());
+
+
+
         }
 
         private void DisplaySingleCarData(Car c)
         {
+            currentlyEditedCar = c;
+
             comboBoxCarBrand.SelectedItem = c.Brand;
             tbCarEngine.Text = c.Engine;
             tbCarModel.Text = c.Model;
@@ -106,6 +126,38 @@ namespace WorkshopManager
                 DisplaySingleCarData(currentlySelectedCar());
             }
             catch {} //ERROR nie udalo sie usunąć problemu z listy
+        }
+
+        private void comboBoxCarBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //walidacja poprawnosci
+            currentlyEditedCar.Brand = comboBoxCarBrand.SelectedItem.ToString();
+        }
+
+        private void tbCarModel_TextChanged(object sender, EventArgs e)
+        {
+            //walidacja poprawnosci
+            currentlyEditedCar.Model = tbCarModel.Text;
+        }
+
+        private void tbCarEngine_TextChanged(object sender, EventArgs e)
+        {
+            //walidacja poprawnosci
+            currentlyEditedCar.Engine = tbCarEngine.Text;
+        }
+
+        private bool AreThereUnsavedChanges()
+        {
+            if (currentlyEditedCar != null && !currentlyEditedCar.Equals(currentlySelectedCar())) return true;
+            return false;
+        }
+
+        private void btnCarApplyChanges_Click(object sender, EventArgs e)
+        {
+            //jakaś walidacja czy coś
+            Car tmp = currentlySelectedCar();
+            tmp= currentlyEditedCar;
+            RefreshAllData();
         }
     }
 }
