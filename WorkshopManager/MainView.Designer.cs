@@ -28,117 +28,127 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Uszczelka pokrywy zaworów RINZ"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            this.listView1 = new System.Windows.Forms.ListView();
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Uszczelka pokrywy zaworów RINZ"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            this.listViewCars = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPartsTypeEngine = new System.Windows.Forms.Button();
+            this.btnPartsTypeSuspension = new System.Windows.Forms.Button();
+            this.btnPartsTypeBrakes = new System.Windows.Forms.Button();
+            this.btnPartsTypeChassis = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.btnAddNewCar = new System.Windows.Forms.Button();
+            this.groupBoxCarProperties = new System.Windows.Forms.GroupBox();
+            this.comboBoxCarBrand = new System.Windows.Forms.ComboBox();
+            this.tbCarModel = new System.Windows.Forms.TextBox();
+            this.numericUpDownCarYear = new System.Windows.Forms.NumericUpDown();
+            this.tbCarEngine = new System.Windows.Forms.TextBox();
+            this.btnCarRemoveProblem = new System.Windows.Forms.Button();
+            this.btnCarAddNewProblem = new System.Windows.Forms.Button();
+            this.lCarProblemsHeader = new System.Windows.Forms.Label();
+            this.listViewCarProblems = new System.Windows.Forms.ListView();
+            this.lcarYearDesc = new System.Windows.Forms.Label();
+            this.lcarEngineDesc = new System.Windows.Forms.Label();
+            this.lcarModelDesc = new System.Windows.Forms.Label();
+            this.lcarBrandDesc = new System.Windows.Forms.Label();
+            this.btnSwitchCarListMode = new System.Windows.Forms.Button();
+            this.btnCarApplyChanges = new System.Windows.Forms.Button();
+            this.groupBoxPartProperties = new System.Windows.Forms.GroupBox();
+            this.lPartCarEngine = new System.Windows.Forms.Label();
+            this.lPartCarModel = new System.Windows.Forms.Label();
+            this.lPartCarBrand = new System.Windows.Forms.Label();
+            this.lPartArea = new System.Windows.Forms.Label();
+            this.lPartCarEngineDesc = new System.Windows.Forms.Label();
+            this.lPartCarModelDesc = new System.Windows.Forms.Label();
+            this.lPartCarBrandDesc = new System.Windows.Forms.Label();
+            this.lPartAreaDesc = new System.Windows.Forms.Label();
+            this.lPartBrandDesc = new System.Windows.Forms.Label();
+            this.btnPartOrder = new System.Windows.Forms.Button();
+            this.lPartsDesc = new System.Windows.Forms.Label();
+            this.listViewParts = new System.Windows.Forms.ListView();
+            this.lPartBrand = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxCarProperties.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCarYear)).BeginInit();
+            this.groupBoxPartProperties.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewCars
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listViewCars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Location = new System.Drawing.Point(3, 32);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(500, 250);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewCars.Location = new System.Drawing.Point(3, 32);
+            this.listViewCars.Name = "listViewCars";
+            this.listViewCars.Size = new System.Drawing.Size(500, 250);
+            this.listViewCars.TabIndex = 0;
+            this.listViewCars.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Aktualnie naprawiane samochody";
+            this.label1.Text = "lCarListHeader";
             // 
-            // button1
+            // btnPartsTypeEngine
             // 
-            this.button1.Location = new System.Drawing.Point(3, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 80);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Silnik";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPartsTypeEngine.Location = new System.Drawing.Point(3, 23);
+            this.btnPartsTypeEngine.Name = "btnPartsTypeEngine";
+            this.btnPartsTypeEngine.Size = new System.Drawing.Size(80, 80);
+            this.btnPartsTypeEngine.TabIndex = 2;
+            this.btnPartsTypeEngine.Text = "Silnik";
+            this.btnPartsTypeEngine.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPartsTypeSuspension
             // 
-            this.button2.Location = new System.Drawing.Point(89, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 80);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Zawieszenie";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPartsTypeSuspension.Location = new System.Drawing.Point(89, 23);
+            this.btnPartsTypeSuspension.Name = "btnPartsTypeSuspension";
+            this.btnPartsTypeSuspension.Size = new System.Drawing.Size(80, 80);
+            this.btnPartsTypeSuspension.TabIndex = 3;
+            this.btnPartsTypeSuspension.Text = "Zawieszenie";
+            this.btnPartsTypeSuspension.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPartsTypeBrakes
             // 
-            this.button3.Location = new System.Drawing.Point(175, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 80);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Hamulce";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPartsTypeBrakes.Location = new System.Drawing.Point(175, 23);
+            this.btnPartsTypeBrakes.Name = "btnPartsTypeBrakes";
+            this.btnPartsTypeBrakes.Size = new System.Drawing.Size(80, 80);
+            this.btnPartsTypeBrakes.TabIndex = 4;
+            this.btnPartsTypeBrakes.Text = "Hamulce";
+            this.btnPartsTypeBrakes.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnPartsTypeChassis
             // 
-            this.button4.Location = new System.Drawing.Point(261, 23);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 80);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Karoseria";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPartsTypeChassis.Location = new System.Drawing.Point(261, 23);
+            this.btnPartsTypeChassis.Name = "btnPartsTypeChassis";
+            this.btnPartsTypeChassis.Size = new System.Drawing.Size(80, 80);
+            this.btnPartsTypeChassis.TabIndex = 5;
+            this.btnPartsTypeChassis.Text = "Karoseria";
+            this.btnPartsTypeChassis.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -149,320 +159,434 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button9);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAddNewCar);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBoxCarProperties);
+            this.splitContainer1.Panel1.Controls.Add(this.btnSwitchCarListMode);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.listView1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCarApplyChanges);
+            this.splitContainer1.Panel1.Controls.Add(this.listViewCars);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.button10);
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.listView3);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Size = new System.Drawing.Size(1067, 674);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBoxPartProperties);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPartOrder);
+            this.splitContainer1.Panel2.Controls.Add(this.lPartsDesc);
+            this.splitContainer1.Panel2.Controls.Add(this.listViewParts);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeEngine);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeChassis);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeSuspension);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeBrakes);
+            this.splitContainer1.Size = new System.Drawing.Size(1067, 658);
             this.splitContainer1.SplitterDistance = 508;
             this.splitContainer1.TabIndex = 6;
             // 
-            // button5
+            // btnAddNewCar
             // 
-            this.button5.Location = new System.Drawing.Point(366, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(137, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Przełącz na archiwum";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAddNewCar.Location = new System.Drawing.Point(223, 3);
+            this.btnAddNewCar.Name = "btnAddNewCar";
+            this.btnAddNewCar.Size = new System.Drawing.Size(137, 23);
+            this.btnAddNewCar.TabIndex = 4;
+            this.btnAddNewCar.Text = "Dodaj nowy";
+            this.btnAddNewCar.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBoxCarProperties
             // 
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.listView2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(3, 288);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(500, 381);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Właścidowści samochodu";
+            this.groupBoxCarProperties.Controls.Add(this.comboBoxCarBrand);
+            this.groupBoxCarProperties.Controls.Add(this.tbCarModel);
+            this.groupBoxCarProperties.Controls.Add(this.numericUpDownCarYear);
+            this.groupBoxCarProperties.Controls.Add(this.tbCarEngine);
+            this.groupBoxCarProperties.Controls.Add(this.btnCarRemoveProblem);
+            this.groupBoxCarProperties.Controls.Add(this.btnCarAddNewProblem);
+            this.groupBoxCarProperties.Controls.Add(this.lCarProblemsHeader);
+            this.groupBoxCarProperties.Controls.Add(this.listViewCarProblems);
+            this.groupBoxCarProperties.Controls.Add(this.lcarYearDesc);
+            this.groupBoxCarProperties.Controls.Add(this.lcarEngineDesc);
+            this.groupBoxCarProperties.Controls.Add(this.lcarModelDesc);
+            this.groupBoxCarProperties.Controls.Add(this.lcarBrandDesc);
+            this.groupBoxCarProperties.Location = new System.Drawing.Point(3, 288);
+            this.groupBoxCarProperties.Name = "groupBoxCarProperties";
+            this.groupBoxCarProperties.Size = new System.Drawing.Size(500, 336);
+            this.groupBoxCarProperties.TabIndex = 3;
+            this.groupBoxCarProperties.TabStop = false;
+            this.groupBoxCarProperties.Text = "Właścidowści samochodu";
             // 
-            // label2
+            // comboBoxCarBrand
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Marka";
+            this.comboBoxCarBrand.FormattingEnabled = true;
+            this.comboBoxCarBrand.Location = new System.Drawing.Point(107, 19);
+            this.comboBoxCarBrand.Name = "comboBoxCarBrand";
+            this.comboBoxCarBrand.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCarBrand.TabIndex = 12;
             // 
-            // label3
+            // tbCarModel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Model";
+            this.tbCarModel.Location = new System.Drawing.Point(107, 46);
+            this.tbCarModel.Name = "tbCarModel";
+            this.tbCarModel.Size = new System.Drawing.Size(100, 20);
+            this.tbCarModel.TabIndex = 11;
             // 
-            // label4
+            // numericUpDownCarYear
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Oznaczenie silnika";
+            this.numericUpDownCarYear.Location = new System.Drawing.Point(107, 95);
+            this.numericUpDownCarYear.Maximum = new decimal(new int[] {
+            2018,
+            0,
+            0,
+            0});
+            this.numericUpDownCarYear.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericUpDownCarYear.Name = "numericUpDownCarYear";
+            this.numericUpDownCarYear.Size = new System.Drawing.Size(121, 20);
+            this.numericUpDownCarYear.TabIndex = 10;
+            this.numericUpDownCarYear.Value = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
             // 
-            // label5
+            // tbCarEngine
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Rocznik";
+            this.tbCarEngine.Location = new System.Drawing.Point(107, 70);
+            this.tbCarEngine.Name = "tbCarEngine";
+            this.tbCarEngine.Size = new System.Drawing.Size(100, 20);
+            this.tbCarEngine.TabIndex = 9;
             // 
-            // listView2
+            // btnCarRemoveProblem
             // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCarRemoveProblem.Location = new System.Drawing.Point(198, 121);
+            this.btnCarRemoveProblem.Name = "btnCarRemoveProblem";
+            this.btnCarRemoveProblem.Size = new System.Drawing.Size(114, 23);
+            this.btnCarRemoveProblem.TabIndex = 7;
+            this.btnCarRemoveProblem.Text = "Usuń zaznaczony";
+            this.btnCarRemoveProblem.UseVisualStyleBackColor = true;
+            // 
+            // btnCarAddNewProblem
+            // 
+            this.btnCarAddNewProblem.Location = new System.Drawing.Point(91, 121);
+            this.btnCarAddNewProblem.Name = "btnCarAddNewProblem";
+            this.btnCarAddNewProblem.Size = new System.Drawing.Size(75, 23);
+            this.btnCarAddNewProblem.TabIndex = 6;
+            this.btnCarAddNewProblem.Text = "Dodaj nowy";
+            this.btnCarAddNewProblem.UseVisualStyleBackColor = true;
+            // 
+            // lCarProblemsHeader
+            // 
+            this.lCarProblemsHeader.AutoSize = true;
+            this.lCarProblemsHeader.Location = new System.Drawing.Point(9, 126);
+            this.lCarProblemsHeader.Name = "lCarProblemsHeader";
+            this.lCarProblemsHeader.Size = new System.Drawing.Size(50, 13);
+            this.lCarProblemsHeader.TabIndex = 5;
+            this.lCarProblemsHeader.Text = "Problemy";
+            // 
+            // listViewCarProblems
+            // 
+            this.listViewCarProblems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView2.CheckBoxes = true;
-            this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem1.Checked = true;
-            listViewItem1.StateImageIndex = 1;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.Checked = true;
-            listViewItem4.StateImageIndex = 1;
-            listViewItem5.StateImageIndex = 0;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
-            this.listView2.Location = new System.Drawing.Point(9, 145);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.ShowGroups = false;
-            this.listView2.Size = new System.Drawing.Size(491, 186);
-            this.listView2.TabIndex = 4;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
+            this.listViewCarProblems.CheckBoxes = true;
+            this.listViewCarProblems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem20.Checked = true;
+            listViewItem20.StateImageIndex = 1;
+            listViewItem21.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.Checked = true;
+            listViewItem23.StateImageIndex = 1;
+            listViewItem24.StateImageIndex = 0;
+            this.listViewCarProblems.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24});
+            this.listViewCarProblems.Location = new System.Drawing.Point(9, 145);
+            this.listViewCarProblems.MultiSelect = false;
+            this.listViewCarProblems.Name = "listViewCarProblems";
+            this.listViewCarProblems.ShowGroups = false;
+            this.listViewCarProblems.Size = new System.Drawing.Size(491, 186);
+            this.listViewCarProblems.TabIndex = 4;
+            this.listViewCarProblems.UseCompatibleStateImageBehavior = false;
+            this.listViewCarProblems.View = System.Windows.Forms.View.List;
             // 
-            // label6
+            // lcarYearDesc
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 126);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Problemy";
+            this.lcarYearDesc.AutoSize = true;
+            this.lcarYearDesc.Location = new System.Drawing.Point(6, 98);
+            this.lcarYearDesc.Name = "lcarYearDesc";
+            this.lcarYearDesc.Size = new System.Drawing.Size(46, 13);
+            this.lcarYearDesc.TabIndex = 3;
+            this.lcarYearDesc.Text = "Rocznik";
             // 
-            // button6
+            // lcarEngineDesc
             // 
-            this.button6.Location = new System.Drawing.Point(91, 121);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Dodaj nowy";
-            this.button6.UseVisualStyleBackColor = true;
+            this.lcarEngineDesc.AutoSize = true;
+            this.lcarEngineDesc.Location = new System.Drawing.Point(6, 73);
+            this.lcarEngineDesc.Name = "lcarEngineDesc";
+            this.lcarEngineDesc.Size = new System.Drawing.Size(95, 13);
+            this.lcarEngineDesc.TabIndex = 2;
+            this.lcarEngineDesc.Text = "Oznaczenie silnika";
             // 
-            // button7
+            // lcarModelDesc
             // 
-            this.button7.Location = new System.Drawing.Point(198, 121);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(114, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Usuń zaznaczony";
-            this.button7.UseVisualStyleBackColor = true;
+            this.lcarModelDesc.AutoSize = true;
+            this.lcarModelDesc.Location = new System.Drawing.Point(6, 49);
+            this.lcarModelDesc.Name = "lcarModelDesc";
+            this.lcarModelDesc.Size = new System.Drawing.Size(36, 13);
+            this.lcarModelDesc.TabIndex = 1;
+            this.lcarModelDesc.Text = "Model";
             // 
-            // button8
+            // lcarBrandDesc
             // 
-            this.button8.Location = new System.Drawing.Point(419, 350);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Zapisz";
-            this.button8.UseVisualStyleBackColor = true;
+            this.lcarBrandDesc.AutoSize = true;
+            this.lcarBrandDesc.Location = new System.Drawing.Point(6, 26);
+            this.lcarBrandDesc.Name = "lcarBrandDesc";
+            this.lcarBrandDesc.Size = new System.Drawing.Size(37, 13);
+            this.lcarBrandDesc.TabIndex = 0;
+            this.lcarBrandDesc.Text = "Marka";
             // 
-            // button9
+            // btnSwitchCarListMode
             // 
-            this.button9.Location = new System.Drawing.Point(223, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(137, 23);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Dodaj nowy";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnSwitchCarListMode.Location = new System.Drawing.Point(366, 3);
+            this.btnSwitchCarListMode.Name = "btnSwitchCarListMode";
+            this.btnSwitchCarListMode.Size = new System.Drawing.Size(137, 23);
+            this.btnSwitchCarListMode.TabIndex = 2;
+            this.btnSwitchCarListMode.Text = "Przełącz na archiwum";
+            this.btnSwitchCarListMode.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // btnCarApplyChanges
             // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCarApplyChanges.Location = new System.Drawing.Point(418, 625);
+            this.btnCarApplyChanges.Name = "btnCarApplyChanges";
+            this.btnCarApplyChanges.Size = new System.Drawing.Size(75, 23);
+            this.btnCarApplyChanges.TabIndex = 8;
+            this.btnCarApplyChanges.Text = "Zapisz";
+            this.btnCarApplyChanges.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxPartProperties
+            // 
+            this.groupBoxPartProperties.Controls.Add(this.lPartBrand);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarEngine);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarModel);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarBrand);
+            this.groupBoxPartProperties.Controls.Add(this.lPartArea);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarEngineDesc);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarModelDesc);
+            this.groupBoxPartProperties.Controls.Add(this.lPartCarBrandDesc);
+            this.groupBoxPartProperties.Controls.Add(this.lPartAreaDesc);
+            this.groupBoxPartProperties.Controls.Add(this.lPartBrandDesc);
+            this.groupBoxPartProperties.Location = new System.Drawing.Point(6, 467);
+            this.groupBoxPartProperties.Name = "groupBoxPartProperties";
+            this.groupBoxPartProperties.Size = new System.Drawing.Size(544, 152);
+            this.groupBoxPartProperties.TabIndex = 11;
+            this.groupBoxPartProperties.TabStop = false;
+            this.groupBoxPartProperties.Text = "Właściwości części";
+            // 
+            // lPartCarEngine
+            // 
+            this.lPartCarEngine.AutoSize = true;
+            this.lPartCarEngine.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lPartCarEngine.Location = new System.Drawing.Point(138, 127);
+            this.lPartCarEngine.Name = "lPartCarEngine";
+            this.lPartCarEngine.Size = new System.Drawing.Size(82, 13);
+            this.lPartCarEngine.TabIndex = 17;
+            this.lPartCarEngine.Text = "Pasuje do marki";
+            // 
+            // lPartCarModel
+            // 
+            this.lPartCarModel.AutoSize = true;
+            this.lPartCarModel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lPartCarModel.Location = new System.Drawing.Point(138, 99);
+            this.lPartCarModel.Name = "lPartCarModel";
+            this.lPartCarModel.Size = new System.Drawing.Size(82, 13);
+            this.lPartCarModel.TabIndex = 16;
+            this.lPartCarModel.Text = "Pasuje do marki";
+            // 
+            // lPartCarBrand
+            // 
+            this.lPartCarBrand.AutoSize = true;
+            this.lPartCarBrand.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lPartCarBrand.Location = new System.Drawing.Point(138, 72);
+            this.lPartCarBrand.Name = "lPartCarBrand";
+            this.lPartCarBrand.Size = new System.Drawing.Size(82, 13);
+            this.lPartCarBrand.TabIndex = 15;
+            this.lPartCarBrand.Text = "Pasuje do marki";
+            // 
+            // lPartArea
+            // 
+            this.lPartArea.AutoSize = true;
+            this.lPartArea.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lPartArea.Location = new System.Drawing.Point(137, 47);
+            this.lPartArea.Name = "lPartArea";
+            this.lPartArea.Size = new System.Drawing.Size(82, 13);
+            this.lPartArea.TabIndex = 14;
+            this.lPartArea.Text = "Pasuje do marki";
+            // 
+            // lPartCarEngineDesc
+            // 
+            this.lPartCarEngineDesc.AutoSize = true;
+            this.lPartCarEngineDesc.Location = new System.Drawing.Point(6, 127);
+            this.lPartCarEngineDesc.Name = "lPartCarEngineDesc";
+            this.lPartCarEngineDesc.Size = new System.Drawing.Size(86, 13);
+            this.lPartCarEngineDesc.TabIndex = 13;
+            this.lPartCarEngineDesc.Text = "Pasuje do silnika";
+            // 
+            // lPartCarModelDesc
+            // 
+            this.lPartCarModelDesc.AutoSize = true;
+            this.lPartCarModelDesc.Location = new System.Drawing.Point(6, 99);
+            this.lPartCarModelDesc.Name = "lPartCarModelDesc";
+            this.lPartCarModelDesc.Size = new System.Drawing.Size(91, 13);
+            this.lPartCarModelDesc.TabIndex = 12;
+            this.lPartCarModelDesc.Text = "Pasuje do modelu";
+            // 
+            // lPartCarBrandDesc
+            // 
+            this.lPartCarBrandDesc.AutoSize = true;
+            this.lPartCarBrandDesc.Location = new System.Drawing.Point(6, 72);
+            this.lPartCarBrandDesc.Name = "lPartCarBrandDesc";
+            this.lPartCarBrandDesc.Size = new System.Drawing.Size(82, 13);
+            this.lPartCarBrandDesc.TabIndex = 11;
+            this.lPartCarBrandDesc.Text = "Pasuje do marki";
+            // 
+            // lPartAreaDesc
+            // 
+            this.lPartAreaDesc.AutoSize = true;
+            this.lPartAreaDesc.Location = new System.Drawing.Point(6, 45);
+            this.lPartAreaDesc.Name = "lPartAreaDesc";
+            this.lPartAreaDesc.Size = new System.Drawing.Size(107, 13);
+            this.lPartAreaDesc.TabIndex = 10;
+            this.lPartAreaDesc.Text = "Segment samochodu";
+            // 
+            // lPartBrandDesc
+            // 
+            this.lPartBrandDesc.AutoSize = true;
+            this.lPartBrandDesc.Location = new System.Drawing.Point(6, 19);
+            this.lPartBrandDesc.Name = "lPartBrandDesc";
+            this.lPartBrandDesc.Size = new System.Drawing.Size(37, 13);
+            this.lPartBrandDesc.TabIndex = 9;
+            this.lPartBrandDesc.Text = "Marka";
+            // 
+            // btnPartOrder
+            // 
+            this.btnPartOrder.Location = new System.Drawing.Point(405, 625);
+            this.btnPartOrder.Name = "btnPartOrder";
+            this.btnPartOrder.Size = new System.Drawing.Size(137, 23);
+            this.btnPartOrder.TabIndex = 5;
+            this.btnPartOrder.Text = "Zamów część";
+            this.btnPartOrder.UseVisualStyleBackColor = true;
+            // 
+            // lPartsDesc
+            // 
+            this.lPartsDesc.AutoSize = true;
+            this.lPartsDesc.Location = new System.Drawing.Point(3, 7);
+            this.lPartsDesc.Name = "lPartsDesc";
+            this.lPartsDesc.Size = new System.Drawing.Size(212, 13);
+            this.lPartsDesc.TabIndex = 10;
+            this.lPartsDesc.Text = "Części pasujące do wybranego samochodu";
+            // 
+            // listViewParts
+            // 
+            this.listViewParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem6.Checked = true;
-            listViewItem6.StateImageIndex = 1;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.Checked = true;
-            listViewItem9.StateImageIndex = 1;
-            listViewItem10.StateImageIndex = 0;
-            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
-            this.listView3.Location = new System.Drawing.Point(3, 111);
-            this.listView3.MultiSelect = false;
-            this.listView3.Name = "listView3";
-            this.listView3.ShowGroups = false;
-            this.listView3.Size = new System.Drawing.Size(547, 288);
-            this.listView3.TabIndex = 9;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
+            this.listViewParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.Checked = true;
+            listViewItem14.StateImageIndex = 1;
+            listViewItem15.StateImageIndex = 0;
+            listViewItem16.Checked = true;
+            listViewItem16.StateImageIndex = 1;
+            listViewItem19.StateImageIndex = 0;
+            this.listViewParts.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19});
+            this.listViewParts.Location = new System.Drawing.Point(3, 111);
+            this.listViewParts.MultiSelect = false;
+            this.listViewParts.Name = "listViewParts";
+            this.listViewParts.ShowGroups = false;
+            this.listViewParts.Size = new System.Drawing.Size(547, 350);
+            this.listViewParts.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewParts.TabIndex = 9;
+            this.listViewParts.UseCompatibleStateImageBehavior = false;
+            this.listViewParts.View = System.Windows.Forms.View.List;
             // 
-            // label7
+            // lPartBrand
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(212, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Części pasujące do wybranego samochodu";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(405, 638);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(137, 23);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Zamów część";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(6, 414);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(544, 205);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Właściwości części";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Marka";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Segment samochodu";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 72);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Pasuje do marki";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 99);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Pasuje do modelu";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 127);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Pasuje do silnika";
+            this.lPartBrand.AutoSize = true;
+            this.lPartBrand.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lPartBrand.Location = new System.Drawing.Point(138, 24);
+            this.lPartBrand.Name = "lPartBrand";
+            this.lPartBrand.Size = new System.Drawing.Size(82, 13);
+            this.lPartBrand.TabIndex = 18;
+            this.lPartBrand.Text = "Pasuje do marki";
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 674);
+            this.ClientSize = new System.Drawing.Size(1067, 658);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainView";
-            this.Text = "Form1";
+            this.Text = "WorkshopManager";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxCarProperties.ResumeLayout(false);
+            this.groupBoxCarProperties.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCarYear)).EndInit();
+            this.groupBoxPartProperties.ResumeLayout(false);
+            this.groupBoxPartProperties.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewCars;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPartsTypeEngine;
+        private System.Windows.Forms.Button btnPartsTypeSuspension;
+        private System.Windows.Forms.Button btnPartsTypeBrakes;
+        private System.Windows.Forms.Button btnPartsTypeChassis;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.GroupBox groupBoxCarProperties;
+        private System.Windows.Forms.Label lCarProblemsHeader;
+        private System.Windows.Forms.ListView listViewCarProblems;
+        private System.Windows.Forms.Label lcarYearDesc;
+        private System.Windows.Forms.Label lcarEngineDesc;
+        private System.Windows.Forms.Label lcarModelDesc;
+        private System.Windows.Forms.Label lcarBrandDesc;
+        private System.Windows.Forms.Button btnSwitchCarListMode;
+        private System.Windows.Forms.Button btnAddNewCar;
+        private System.Windows.Forms.Button btnCarApplyChanges;
+        private System.Windows.Forms.Button btnCarRemoveProblem;
+        private System.Windows.Forms.Button btnCarAddNewProblem;
+        private System.Windows.Forms.GroupBox groupBoxPartProperties;
+        private System.Windows.Forms.Label lPartCarEngineDesc;
+        private System.Windows.Forms.Label lPartCarModelDesc;
+        private System.Windows.Forms.Label lPartCarBrandDesc;
+        private System.Windows.Forms.Label lPartAreaDesc;
+        private System.Windows.Forms.Label lPartBrandDesc;
+        private System.Windows.Forms.Button btnPartOrder;
+        private System.Windows.Forms.Label lPartsDesc;
+        private System.Windows.Forms.ListView listViewParts;
+        private System.Windows.Forms.ComboBox comboBoxCarBrand;
+        private System.Windows.Forms.TextBox tbCarModel;
+        private System.Windows.Forms.NumericUpDown numericUpDownCarYear;
+        private System.Windows.Forms.TextBox tbCarEngine;
+        private System.Windows.Forms.Label lPartCarEngine;
+        private System.Windows.Forms.Label lPartCarModel;
+        private System.Windows.Forms.Label lPartCarBrand;
+        private System.Windows.Forms.Label lPartArea;
+        private System.Windows.Forms.Label lPartBrand;
     }
 }
 
