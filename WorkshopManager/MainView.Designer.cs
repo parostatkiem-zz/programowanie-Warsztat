@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("test");
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("test");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
             "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
             "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
+            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
             "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
             "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
             "Uszczelka pokrywy zaworów RINZ"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
             this.listViewCars = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -113,7 +113,7 @@
             this.listViewCars.FullRowSelect = true;
             this.listViewCars.GridLines = true;
             this.listViewCars.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem27});
+            listViewItem40});
             this.listViewCars.Location = new System.Drawing.Point(3, 32);
             this.listViewCars.Name = "listViewCars";
             this.listViewCars.Size = new System.Drawing.Size(500, 250);
@@ -304,6 +304,7 @@
             this.btnCarRemoveProblem.TabIndex = 7;
             this.btnCarRemoveProblem.Text = "Usuń zaznaczony";
             this.btnCarRemoveProblem.UseVisualStyleBackColor = true;
+            this.btnCarRemoveProblem.Click += new System.EventHandler(this.btnCarRemoveProblem_Click);
             // 
             // btnCarAddNewProblem
             // 
@@ -330,19 +331,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewCarProblems.CheckBoxes = true;
             this.listViewCarProblems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem35.Checked = true;
-            listViewItem35.StateImageIndex = 1;
-            listViewItem36.StateImageIndex = 0;
-            listViewItem37.StateImageIndex = 0;
-            listViewItem38.Checked = true;
-            listViewItem38.StateImageIndex = 1;
-            listViewItem39.StateImageIndex = 0;
+            listViewItem41.Checked = true;
+            listViewItem41.StateImageIndex = 1;
+            listViewItem42.StateImageIndex = 0;
+            listViewItem43.StateImageIndex = 0;
+            listViewItem44.Checked = true;
+            listViewItem44.StateImageIndex = 1;
+            listViewItem45.StateImageIndex = 0;
             this.listViewCarProblems.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem35,
-            listViewItem36,
-            listViewItem37,
-            listViewItem38,
-            listViewItem39});
+            listViewItem41,
+            listViewItem42,
+            listViewItem43,
+            listViewItem44,
+            listViewItem45});
             this.listViewCarProblems.Location = new System.Drawing.Point(9, 145);
             this.listViewCarProblems.MultiSelect = false;
             this.listViewCarProblems.Name = "listViewCarProblems";
@@ -543,21 +544,21 @@
             this.listViewParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem28.StateImageIndex = 0;
-            listViewItem29.Checked = true;
-            listViewItem29.StateImageIndex = 1;
-            listViewItem30.StateImageIndex = 0;
-            listViewItem31.Checked = true;
-            listViewItem31.StateImageIndex = 1;
-            listViewItem34.StateImageIndex = 0;
+            listViewItem46.StateImageIndex = 0;
+            listViewItem47.Checked = true;
+            listViewItem47.StateImageIndex = 1;
+            listViewItem48.StateImageIndex = 0;
+            listViewItem49.Checked = true;
+            listViewItem49.StateImageIndex = 1;
+            listViewItem52.StateImageIndex = 0;
             this.listViewParts.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem28,
-            listViewItem29,
-            listViewItem30,
-            listViewItem31,
-            listViewItem32,
-            listViewItem33,
-            listViewItem34});
+            listViewItem46,
+            listViewItem47,
+            listViewItem48,
+            listViewItem49,
+            listViewItem50,
+            listViewItem51,
+            listViewItem52});
             this.listViewParts.Location = new System.Drawing.Point(3, 111);
             this.listViewParts.MultiSelect = false;
             this.listViewParts.Name = "listViewParts";

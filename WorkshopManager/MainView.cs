@@ -93,5 +93,19 @@ namespace WorkshopManager
         {
             saveData(true);
         }
+
+        private void btnCarRemoveProblem_Click(object sender, EventArgs e)
+        {
+
+            if (listViewCarProblems.SelectedItems.Count <= 0 || listViewCarProblems.SelectedItems[0].Tag == null) return ; //nic nei jest zaznaczone
+
+            CarProblem p = listViewCarProblems.SelectedItems[0].Tag as CarProblem;
+            try
+            {
+                currentlySelectedCar().problems.Remove(p);
+                DisplaySingleCarData(currentlySelectedCar());
+            }
+            catch {} //ERROR nie udalo sie usunąć problemu z listy
+        }
     }
 }
