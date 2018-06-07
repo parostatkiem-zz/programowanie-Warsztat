@@ -63,6 +63,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAddNewCar = new System.Windows.Forms.Button();
             this.groupBoxCarProperties = new System.Windows.Forms.GroupBox();
+            this.tbNewCarProblemText = new System.Windows.Forms.TextBox();
             this.comboBoxCarBrand = new System.Windows.Forms.ComboBox();
             this.tbCarModel = new System.Windows.Forms.TextBox();
             this.numericUpDownCarYear = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +79,7 @@
             this.btnSwitchCarListMode = new System.Windows.Forms.Button();
             this.groupBoxPartProperties = new System.Windows.Forms.GroupBox();
             this.lPartBrand = new System.Windows.Forms.Label();
+            this.btnPartOrder = new System.Windows.Forms.Button();
             this.lPartCarEngine = new System.Windows.Forms.Label();
             this.lPartCarModel = new System.Windows.Forms.Label();
             this.lPartCarBrand = new System.Windows.Forms.Label();
@@ -87,10 +89,8 @@
             this.lPartCarBrandDesc = new System.Windows.Forms.Label();
             this.lPartAreaDesc = new System.Windows.Forms.Label();
             this.lPartBrandDesc = new System.Windows.Forms.Label();
-            this.btnPartOrder = new System.Windows.Forms.Button();
             this.lPartsDesc = new System.Windows.Forms.Label();
             this.listViewParts = new System.Windows.Forms.ListView();
-            this.tbNewCarProblemText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -102,7 +102,8 @@
             // 
             // listViewCars
             // 
-            this.listViewCars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listViewCars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -115,7 +116,7 @@
             listViewItem1});
             this.listViewCars.Location = new System.Drawing.Point(3, 32);
             this.listViewCars.Name = "listViewCars";
-            this.listViewCars.Size = new System.Drawing.Size(500, 250);
+            this.listViewCars.Size = new System.Drawing.Size(569, 263);
             this.listViewCars.TabIndex = 0;
             this.listViewCars.UseCompatibleStateImageBehavior = false;
             this.listViewCars.View = System.Windows.Forms.View.Details;
@@ -199,24 +200,26 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnSwitchCarListMode);
             this.splitContainer1.Panel1.Controls.Add(this.lCarListHeader);
             this.splitContainer1.Panel1.Controls.Add(this.listViewCars);
+            this.splitContainer1.Panel1MinSize = 510;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBoxPartProperties);
-            this.splitContainer1.Panel2.Controls.Add(this.btnPartOrder);
             this.splitContainer1.Panel2.Controls.Add(this.lPartsDesc);
             this.splitContainer1.Panel2.Controls.Add(this.listViewParts);
             this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeEngine);
             this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeChassis);
             this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeSuspension);
             this.splitContainer1.Panel2.Controls.Add(this.btnPartsTypeBrakes);
-            this.splitContainer1.Size = new System.Drawing.Size(1067, 658);
-            this.splitContainer1.SplitterDistance = 508;
+            this.splitContainer1.Panel2MinSize = 400;
+            this.splitContainer1.Size = new System.Drawing.Size(1094, 581);
+            this.splitContainer1.SplitterDistance = 577;
             this.splitContainer1.TabIndex = 6;
             // 
             // btnAddNewCar
             // 
-            this.btnAddNewCar.Location = new System.Drawing.Point(223, 3);
+            this.btnAddNewCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewCar.Location = new System.Drawing.Point(292, 3);
             this.btnAddNewCar.Name = "btnAddNewCar";
             this.btnAddNewCar.Size = new System.Drawing.Size(137, 23);
             this.btnAddNewCar.TabIndex = 4;
@@ -225,6 +228,8 @@
             // 
             // groupBoxCarProperties
             // 
+            this.groupBoxCarProperties.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCarProperties.Controls.Add(this.tbNewCarProblemText);
             this.groupBoxCarProperties.Controls.Add(this.comboBoxCarBrand);
             this.groupBoxCarProperties.Controls.Add(this.tbCarModel);
@@ -238,12 +243,21 @@
             this.groupBoxCarProperties.Controls.Add(this.lcarEngineDesc);
             this.groupBoxCarProperties.Controls.Add(this.lcarModelDesc);
             this.groupBoxCarProperties.Controls.Add(this.lcarBrandDesc);
-            this.groupBoxCarProperties.Location = new System.Drawing.Point(3, 288);
+            this.groupBoxCarProperties.Location = new System.Drawing.Point(3, 301);
             this.groupBoxCarProperties.Name = "groupBoxCarProperties";
-            this.groupBoxCarProperties.Size = new System.Drawing.Size(500, 336);
+            this.groupBoxCarProperties.Size = new System.Drawing.Size(569, 275);
             this.groupBoxCarProperties.TabIndex = 3;
             this.groupBoxCarProperties.TabStop = false;
             this.groupBoxCarProperties.Text = "Właścidowści samochodu";
+            // 
+            // tbNewCarProblemText
+            // 
+            this.tbNewCarProblemText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNewCarProblemText.Location = new System.Drawing.Point(172, 123);
+            this.tbNewCarProblemText.Name = "tbNewCarProblemText";
+            this.tbNewCarProblemText.Size = new System.Drawing.Size(234, 20);
+            this.tbNewCarProblemText.TabIndex = 13;
             // 
             // comboBoxCarBrand
             // 
@@ -299,7 +313,8 @@
             // 
             // btnCarRemoveProblem
             // 
-            this.btnCarRemoveProblem.Location = new System.Drawing.Point(376, 121);
+            this.btnCarRemoveProblem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarRemoveProblem.Location = new System.Drawing.Point(445, 121);
             this.btnCarRemoveProblem.Name = "btnCarRemoveProblem";
             this.btnCarRemoveProblem.Size = new System.Drawing.Size(114, 23);
             this.btnCarRemoveProblem.TabIndex = 7;
@@ -345,11 +360,11 @@
             listViewItem4,
             listViewItem5,
             listViewItem6});
-            this.listViewCarProblems.Location = new System.Drawing.Point(9, 145);
+            this.listViewCarProblems.Location = new System.Drawing.Point(6, 145);
             this.listViewCarProblems.MultiSelect = false;
             this.listViewCarProblems.Name = "listViewCarProblems";
             this.listViewCarProblems.ShowGroups = false;
-            this.listViewCarProblems.Size = new System.Drawing.Size(491, 215);
+            this.listViewCarProblems.Size = new System.Drawing.Size(560, 124);
             this.listViewCarProblems.TabIndex = 4;
             this.listViewCarProblems.UseCompatibleStateImageBehavior = false;
             this.listViewCarProblems.View = System.Windows.Forms.View.List;
@@ -392,7 +407,8 @@
             // 
             // btnSwitchCarListMode
             // 
-            this.btnSwitchCarListMode.Location = new System.Drawing.Point(366, 3);
+            this.btnSwitchCarListMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSwitchCarListMode.Location = new System.Drawing.Point(435, 3);
             this.btnSwitchCarListMode.Name = "btnSwitchCarListMode";
             this.btnSwitchCarListMode.Size = new System.Drawing.Size(137, 23);
             this.btnSwitchCarListMode.TabIndex = 2;
@@ -401,7 +417,10 @@
             // 
             // groupBoxPartProperties
             // 
+            this.groupBoxPartProperties.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPartProperties.Controls.Add(this.lPartBrand);
+            this.groupBoxPartProperties.Controls.Add(this.btnPartOrder);
             this.groupBoxPartProperties.Controls.Add(this.lPartCarEngine);
             this.groupBoxPartProperties.Controls.Add(this.lPartCarModel);
             this.groupBoxPartProperties.Controls.Add(this.lPartCarBrand);
@@ -411,9 +430,9 @@
             this.groupBoxPartProperties.Controls.Add(this.lPartCarBrandDesc);
             this.groupBoxPartProperties.Controls.Add(this.lPartAreaDesc);
             this.groupBoxPartProperties.Controls.Add(this.lPartBrandDesc);
-            this.groupBoxPartProperties.Location = new System.Drawing.Point(6, 467);
+            this.groupBoxPartProperties.Location = new System.Drawing.Point(3, 418);
             this.groupBoxPartProperties.Name = "groupBoxPartProperties";
-            this.groupBoxPartProperties.Size = new System.Drawing.Size(544, 152);
+            this.groupBoxPartProperties.Size = new System.Drawing.Size(502, 158);
             this.groupBoxPartProperties.TabIndex = 11;
             this.groupBoxPartProperties.TabStop = false;
             this.groupBoxPartProperties.Text = "Właściwości części";
@@ -427,6 +446,16 @@
             this.lPartBrand.Size = new System.Drawing.Size(82, 13);
             this.lPartBrand.TabIndex = 18;
             this.lPartBrand.Text = "Pasuje do marki";
+            // 
+            // btnPartOrder
+            // 
+            this.btnPartOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPartOrder.Location = new System.Drawing.Point(357, 123);
+            this.btnPartOrder.Name = "btnPartOrder";
+            this.btnPartOrder.Size = new System.Drawing.Size(137, 23);
+            this.btnPartOrder.TabIndex = 5;
+            this.btnPartOrder.Text = "Zamów część";
+            this.btnPartOrder.UseVisualStyleBackColor = true;
             // 
             // lPartCarEngine
             // 
@@ -513,15 +542,6 @@
             this.lPartBrandDesc.TabIndex = 9;
             this.lPartBrandDesc.Text = "Marka";
             // 
-            // btnPartOrder
-            // 
-            this.btnPartOrder.Location = new System.Drawing.Point(405, 625);
-            this.btnPartOrder.Name = "btnPartOrder";
-            this.btnPartOrder.Size = new System.Drawing.Size(137, 23);
-            this.btnPartOrder.TabIndex = 5;
-            this.btnPartOrder.Text = "Zamów część";
-            this.btnPartOrder.UseVisualStyleBackColor = true;
-            // 
             // lPartsDesc
             // 
             this.lPartsDesc.AutoSize = true;
@@ -533,7 +553,8 @@
             // 
             // listViewParts
             // 
-            this.listViewParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listViewParts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             listViewItem7.StateImageIndex = 0;
@@ -555,25 +576,19 @@
             this.listViewParts.MultiSelect = false;
             this.listViewParts.Name = "listViewParts";
             this.listViewParts.ShowGroups = false;
-            this.listViewParts.Size = new System.Drawing.Size(547, 350);
+            this.listViewParts.Size = new System.Drawing.Size(505, 305);
             this.listViewParts.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewParts.TabIndex = 9;
             this.listViewParts.UseCompatibleStateImageBehavior = false;
             this.listViewParts.View = System.Windows.Forms.View.List;
             // 
-            // tbNewCarProblemText
-            // 
-            this.tbNewCarProblemText.Location = new System.Drawing.Point(172, 123);
-            this.tbNewCarProblemText.Name = "tbNewCarProblemText";
-            this.tbNewCarProblemText.Size = new System.Drawing.Size(165, 20);
-            this.tbNewCarProblemText.TabIndex = 13;
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 658);
+            this.ClientSize = new System.Drawing.Size(1094, 581);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(980, 450);
             this.Name = "MainView";
             this.Text = "WorkshopManager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainView_FormClosing);
