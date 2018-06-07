@@ -15,5 +15,13 @@ namespace WorkshopManager
         {
             Cars = JsonConvert.DeserializeObject<List<Car>>(File.ReadAllText("data_cars.json"));
         }
+
+        public void SaveDataToFiles()
+        {
+            using (StreamWriter sw = new StreamWriter("data_cars.json"))
+            {
+                sw.Write(JsonConvert.SerializeObject(Cars));
+            }
+        }
     }
 }

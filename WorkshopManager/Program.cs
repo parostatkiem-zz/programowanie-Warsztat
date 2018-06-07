@@ -19,7 +19,7 @@ namespace WorkshopManager
             MainView view = new MainView();
             Presenter p = new Presenter(model, view);
             Application.Run(view);
-            Application.Run(new MainView());
+           // Application.Run(new MainView());
         }
     }
 }

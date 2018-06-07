@@ -16,7 +16,15 @@ namespace WorkshopManager
             this.model = model;
             this.view = view;
             view.loadData += _loadData;
+            view.saveData += _saveData;
             view.getAllCars += _getAllCars;
+        }
+
+        private void _saveData(bool obj)
+        {
+            try
+            { model.SaveDataToFiles(); }
+            catch { MessageBox.Show("Nie udało się zapisać danych do plików"); }
         }
 
         private void _loadData(bool obj)

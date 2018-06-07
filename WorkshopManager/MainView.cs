@@ -14,7 +14,7 @@ namespace WorkshopManager
         #region EVENTS
         public event Func<List<Car>> getAllCars;
         public event Action<bool> loadData;
-
+        public event Action<bool> saveData;
         #endregion
         public MainView()
         {
@@ -38,11 +38,8 @@ namespace WorkshopManager
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (listViewCars.SelectedItems.Count<=0 || listViewCars.SelectedItems[0].Tag == null) return; //nic nei jest zaznaczone
-            Car selectedCar = listViewCars.SelectedItems[0].Tag as Car;
-            DisplaySingleCarData(selectedCar);
-
+            if (currentlySelectedCar() != null)
+              DisplaySingleCarData(currentlySelectedCar());
         }
 
         private void DisplaySingleCarData(Car c)
@@ -51,6 +48,50 @@ namespace WorkshopManager
             tbCarEngine.Text = c.Engine;
             tbCarModel.Text = c.Model;
             numericUpDownCarYear.Value = c.Year;
+
+            listViewCarProblems.Items.Clear();
+            ListViewItem currentItem;
+            foreach (CarProblem p in c.problems)
+            {
+                currentItem = new ListViewItem();
+                currentItem.Tag = p;
+                currentItem.Text = p.Name;
+
+                currentItem.Checked = p.IsFixed;
+                listViewCarProblems.Items.Add(currentItem);
+            }
+            ColorizeCarProblemList();
+
+        }
+        private void ColorizeCarProblemList()
+        {
+            foreach(ListViewItem i in listViewCarProblems.Items)
+            {
+                if (i.Checked)
+                    i.ForeColor = Color.DarkGray;
+                else
+                    i.ForeColor = Color.Black;
+            }
+        }
+
+        private Car currentlySelectedCar()
+        {
+            if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return null; //nic nei jest zaznaczone
+            return listViewCars.SelectedItems[0].Tag as Car;
+
+        }
+
+        private void btnCarAddNewProblem_Click(object sender, EventArgs e)
+        {
+            if (tbNewCarProblemText.TextLength <= 0) return; //ERROR
+            currentlySelectedCar().problems.Add(new CarProblem (tbNewCarProblemText.Text));
+            tbNewCarProblemText.Text = "";
+            DisplaySingleCarData(currentlySelectedCar());
+        }
+
+        private void MainView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveData(true);
         }
     }
 }
