@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WorkshopManager
 {
-    class CarProblem
+    public class CarProblem
     {
         bool isFixed;
         string name;

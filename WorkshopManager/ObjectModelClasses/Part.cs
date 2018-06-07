@@ -6,7 +6,7 @@ using System.Text;
 namespace WorkshopManager
 {
     enum CarArea {Engine, Suspension, Brakes, Chassis }
-    class Part
+    public class Part
     {
         CarArea area;
         string name;

@@ -5,8 +5,10 @@ using System.Text;
 
 namespace WorkshopManager
 {
-   static class Config
+    interface ImainView
     {
-     
+        event Action<bool> loadData;
+        event Func<List<Car>> getAllCars;
+    
     }
 }

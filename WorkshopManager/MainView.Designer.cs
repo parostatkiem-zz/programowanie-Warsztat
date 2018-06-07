@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("test");
             System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
             System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
             "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
             "Uszczelka pokrywy zaworów RINZ"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
             this.listViewCars = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lCarListHeader = new System.Windows.Forms.Label();
             this.btnPartsTypeEngine = new System.Windows.Forms.Button();
             this.btnPartsTypeSuspension = new System.Windows.Forms.Button();
             this.btnPartsTypeBrakes = new System.Windows.Forms.Button();
@@ -86,6 +87,10 @@
             this.lPartsDesc = new System.Windows.Forms.Label();
             this.listViewParts = new System.Windows.Forms.ListView();
             this.lPartBrand = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,20 +104,31 @@
             // 
             this.listViewCars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewCars.FullRowSelect = true;
+            this.listViewCars.GridLines = true;
+            this.listViewCars.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem14});
             this.listViewCars.Location = new System.Drawing.Point(3, 32);
             this.listViewCars.Name = "listViewCars";
             this.listViewCars.Size = new System.Drawing.Size(500, 250);
             this.listViewCars.TabIndex = 0;
             this.listViewCars.UseCompatibleStateImageBehavior = false;
+            this.listViewCars.View = System.Windows.Forms.View.Details;
+            this.listViewCars.SelectedIndexChanged += new System.EventHandler(this.listViewCars_SelectedIndexChanged);
             // 
-            // label1
+            // lCarListHeader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "lCarListHeader";
+            this.lCarListHeader.AutoSize = true;
+            this.lCarListHeader.Location = new System.Drawing.Point(3, 8);
+            this.lCarListHeader.Name = "lCarListHeader";
+            this.lCarListHeader.Size = new System.Drawing.Size(153, 13);
+            this.lCarListHeader.TabIndex = 1;
+            this.lCarListHeader.Text = "Lista samochodów do naprawy";
             // 
             // btnPartsTypeEngine
             // 
@@ -162,7 +178,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnAddNewCar);
             this.splitContainer1.Panel1.Controls.Add(this.groupBoxCarProperties);
             this.splitContainer1.Panel1.Controls.Add(this.btnSwitchCarListMode);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.lCarListHeader);
             this.splitContainer1.Panel1.Controls.Add(this.btnCarApplyChanges);
             this.splitContainer1.Panel1.Controls.Add(this.listViewCars);
             // 
@@ -213,6 +229,11 @@
             // comboBoxCarBrand
             // 
             this.comboBoxCarBrand.FormattingEnabled = true;
+            this.comboBoxCarBrand.Items.AddRange(new object[] {
+            "BMW",
+            "Mercedes",
+            "Fiat",
+            "Skoda"});
             this.comboBoxCarBrand.Location = new System.Drawing.Point(107, 19);
             this.comboBoxCarBrand.Name = "comboBoxCarBrand";
             this.comboBoxCarBrand.Size = new System.Drawing.Size(121, 21);
@@ -287,19 +308,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewCarProblems.CheckBoxes = true;
             this.listViewCarProblems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem20.Checked = true;
-            listViewItem20.StateImageIndex = 1;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            listViewItem23.Checked = true;
-            listViewItem23.StateImageIndex = 1;
-            listViewItem24.StateImageIndex = 0;
+            listViewItem15.Checked = true;
+            listViewItem15.StateImageIndex = 1;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.Checked = true;
+            listViewItem18.StateImageIndex = 1;
+            listViewItem19.StateImageIndex = 0;
             this.listViewCarProblems.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24});
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19});
             this.listViewCarProblems.Location = new System.Drawing.Point(9, 145);
             this.listViewCarProblems.MultiSelect = false;
             this.listViewCarProblems.Name = "listViewCarProblems";
@@ -490,21 +511,21 @@
             this.listViewParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem13.StateImageIndex = 0;
-            listViewItem14.Checked = true;
-            listViewItem14.StateImageIndex = 1;
-            listViewItem15.StateImageIndex = 0;
-            listViewItem16.Checked = true;
-            listViewItem16.StateImageIndex = 1;
-            listViewItem19.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.Checked = true;
+            listViewItem21.StateImageIndex = 1;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.Checked = true;
+            listViewItem23.StateImageIndex = 1;
+            listViewItem26.StateImageIndex = 0;
             this.listViewParts.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19});
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26});
             this.listViewParts.Location = new System.Drawing.Point(3, 111);
             this.listViewParts.MultiSelect = false;
             this.listViewParts.Name = "listViewParts";
@@ -525,6 +546,25 @@
             this.lPartBrand.TabIndex = 18;
             this.lPartBrand.Text = "Pasuje do marki";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Marka";
+            this.columnHeader1.Width = 151;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Model";
+            this.columnHeader2.Width = 153;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Rocznik";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Nierozwiązane problemy";
+            this.columnHeader4.Width = 130;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,6 +573,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainView";
             this.Text = "WorkshopManager";
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -551,7 +592,7 @@
         #endregion
 
         private System.Windows.Forms.ListView listViewCars;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lCarListHeader;
         private System.Windows.Forms.Button btnPartsTypeEngine;
         private System.Windows.Forms.Button btnPartsTypeSuspension;
         private System.Windows.Forms.Button btnPartsTypeBrakes;
@@ -587,6 +628,10 @@
         private System.Windows.Forms.Label lPartCarBrand;
         private System.Windows.Forms.Label lPartArea;
         private System.Windows.Forms.Label lPartBrand;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

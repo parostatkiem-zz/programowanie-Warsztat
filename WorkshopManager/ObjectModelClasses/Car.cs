@@ -5,14 +5,30 @@ using System.Text;
 
 namespace WorkshopManager
 {
-    class Car
+    public class Car
     {
-        bool isDone;
-        string brand;
-        string model;
-        string engine;
-        uint year;
-        List<CarProblem> problems;
+        private bool isDone;
+        private string brand;
+        private string model;
+        private string engine;
+        private uint year;
+
+        public List<CarProblem> problems;
+
+        public bool IsDone{get;set; }
+        public string Brand { get; set; }
+
+        public string Model { get; set; }
+        public string Engine { get; set; }
+        public uint Year { get; set; }
+
+        public uint ProblemAmount()
+        {
+            // return (uint)problems.Count;
+            return 0;
+        }
+
+      //  public Car()
     }
 
     

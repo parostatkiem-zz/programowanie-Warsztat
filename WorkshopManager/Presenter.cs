@@ -8,10 +8,27 @@ namespace WorkshopManager
 {
     class Presenter
     {
-        Form view;
+        ImainView view;
         Model model;
-        public Presenter(Model model, Form view)
+        
+        public Presenter(Model model, ImainView view)
         {
+            this.model = model;
+            this.view = view;
+            view.loadData += _loadData;
+            view.getAllCars += _getAllCars;
+        }
+
+        private void _loadData(bool obj)
+        {
+            try
+            { model.LoadDataFromFiles(); }
+            catch { MessageBox.Show("Nie udało się wczytać danych z pliku"); }
+        }
+
+        private List<Car> _getAllCars()
+        {
+            return model.Cars;
         }
     }
 }
