@@ -18,5 +18,12 @@ namespace WorkshopManager
             Name = _name;
             IsFixed = _isFixed;
         }
+        public override bool Equals(object obj)
+        {
+            var comparedProblem = obj as CarProblem;
+            if (Name != comparedProblem.Name) return false;
+            if (IsFixed != comparedProblem.IsFixed) return false;
+            return true;
+        }
     }
 }

@@ -68,9 +68,10 @@ namespace WorkshopManager
             try
             {
                 currentlySelectedCar().problems.Remove(p);
-                DisplaySingleCarData(currentlySelectedCar());
+            
             }
             catch { } //ERROR nie udalo sie usunąć problemu z listy
+            DisplaySingleCarData(currentlySelectedCar());
         }
 
         private void comboBoxCarBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,13 +137,14 @@ namespace WorkshopManager
         }
         private void DisplaySingleCarData(Car c)
         {
-            currentlyEditedCar = c;
+           
             if (c == null)
             {
                 groupBoxCarProperties.Visible = false;
                 return;
             }
             else { groupBoxCarProperties.Visible = true; }
+            currentlyEditedCar = c.Clone();
 
             comboBoxCarBrand.SelectedItem = c.Brand;
             tbCarEngine.Text = c.Engine;
@@ -185,7 +187,8 @@ namespace WorkshopManager
 
         private bool AreThereUnsavedChanges()
         {
-            if (currentlyEditedCar != null && !currentlyEditedCar.Equals(currentlySelectedCar())) return true;
+            Car original = currentlySelectedCar();
+            if (currentlyEditedCar != null && !currentlyEditedCar.Equals(original)) return true;
             return false;
         }
         private CarEditorMode _mode;
@@ -194,11 +197,20 @@ namespace WorkshopManager
             get { return _mode; }
             set
             {
+                if (AreThereUnsavedChanges())
+                {
+                    DialogResult dialogResult = MessageBox.Show("Wygląda na to, że rozpoczęto edycję danych. Czy na pewno chcesz je odrzucić?", "Potwierdzenie odrzucenia zmian", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
                 ListViewItem currentItem;
                 switch (value)
                 {
                     case CarEditorMode.Active:
                         lCarListHeader.Visible = true;
+                        lCarListHeader.Text = "Lista samochdów do naprawy";
                         btnSwitchCarListMode.Text = "Przełącz na archiwum";
                         listViewCars.Visible = true;
                         btnAddNewCar.Visible = true;
@@ -214,6 +226,7 @@ namespace WorkshopManager
                         break;
                     case CarEditorMode.Done:
                         lCarListHeader.Visible = true;
+                        lCarListHeader.Text = "Lista naprawionych samochodów";
                         btnSwitchCarListMode.Text = "Przełącz na aktywne";
                         listViewCars.Visible = true;
                         btnAddNewCar.Visible = true;
@@ -239,8 +252,11 @@ namespace WorkshopManager
 
 
                 }
+                currentlyEditedCar = null;
                 DisplaySingleCarData(currentlySelectedCar());
+                
                 _mode = value;
+
 
             }
         }
@@ -251,7 +267,6 @@ namespace WorkshopManager
         {
             InitializeComponent();
             _mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
-            
         }  
        
     }
