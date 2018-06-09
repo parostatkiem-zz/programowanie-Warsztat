@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace WorkshopManager
 {
+    public enum CarEditorMode{Active, Done, New}
     public partial class MainView : Form,ImainView
     {
         #region EVENTS
@@ -19,20 +20,14 @@ namespace WorkshopManager
         public MainView()
         {
             InitializeComponent();
+            _mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
+            
         }
         private Car currentlyEditedCar = null;
         private void RefreshAllData()
         {
-            listViewCars.Items.Clear();
-            ListViewItem currentItem;
-            foreach (Car c in getAllCars())
-            {
-                currentItem = new ListViewItem();
-                currentItem.Tag = c;
-                currentItem.Text = c.Brand;
-                currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
-                listViewCars.Items.Add(currentItem);
-            }
+            Mode = Mode;
+           
         }
         private void MainView_Load(object sender, EventArgs e)
         {
@@ -158,6 +153,79 @@ namespace WorkshopManager
             Car tmp = currentlySelectedCar();
             tmp= currentlyEditedCar;
             RefreshAllData();
+        }
+
+        private CarEditorMode _mode;
+        private CarEditorMode Mode
+        {
+            get { return _mode; }
+            set
+            {
+                ListViewItem currentItem;
+                switch (value)
+                {
+                    case CarEditorMode.Active:
+                        lCarListHeader.Visible = true;
+                        btnSwitchCarListMode.Text = "Przełącz na archiwum";
+                        listViewCars.Visible = true;
+                        btnAddNewCar.Visible = true; 
+                        listViewCars.Items.Clear();
+                        foreach (Car c in getAllCars().Where(c=>!c.IsDone))
+                        {
+                            currentItem = new ListViewItem();
+                            currentItem.Tag = c;
+                            currentItem.Text = c.Brand;
+                            currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
+                            listViewCars.Items.Add(currentItem);
+                        }
+                      break;
+                    case CarEditorMode.Done:
+                        lCarListHeader.Visible = true;
+                        btnSwitchCarListMode.Text = "Przełącz na aktywne";
+                        listViewCars.Visible = true;
+                        btnAddNewCar.Visible = true;
+                        listViewCars.Items.Clear();
+                       
+                        foreach (Car c in getAllCars().Where(c => c.IsDone))
+                        {
+                            currentItem = new ListViewItem();
+                            currentItem.Tag = c;
+                            currentItem.Text = c.Brand;
+                            currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
+                            listViewCars.Items.Add(currentItem);
+                        }
+                       break;
+                    case CarEditorMode.New:
+                        lCarListHeader.Visible = false;
+                        btnSwitchCarListMode.Visible = false;
+                        listViewCars.Visible = false;
+                        btnAddNewCar.Visible = false;
+
+                    
+                        break;
+
+
+                }
+                _mode = value;
+               
+            }
+        }
+
+        private void btnSwitchCarListMode_Click(object sender, EventArgs e)
+        {
+            if (Mode == CarEditorMode.Active)
+            {
+                Mode = CarEditorMode.Done;
+                return;
+            }
+            if (Mode == CarEditorMode.Done)
+                Mode = CarEditorMode.Active;
+
+        }
+
+        private void btnAddNewCar_Click(object sender, EventArgs e)
+        {
+            Mode = CarEditorMode.New;
         }
     }
 }
