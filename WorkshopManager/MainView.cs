@@ -69,6 +69,7 @@ namespace WorkshopManager
             }
             currentlyEditedCar.problems.Add(new CarProblem(tbNewCarProblemText.Text));
             tbNewCarProblemText.Text = "";
+           
             DisplaySingleCarData(currentlyEditedCar);
         }
 
@@ -311,7 +312,7 @@ namespace WorkshopManager
                         return;
                     }
                 }
-                var a = IsValid;
+                //var a = IsValid;
                 ListViewItem currentItem;
                 switch (value)
                 {
@@ -325,6 +326,7 @@ namespace WorkshopManager
                         btnSwitchCarListMode.Visible = true;
                         btnCarApply.Text = "Zapisz";
                         btnCarCancel.Visible = true;
+                        btnCarDelete.Visible = true;
                         listViewCars.Items.Clear();
 
                         foreach (Car c in getAllCars().Where(c => c!=null && !c.IsDone))
@@ -348,6 +350,7 @@ namespace WorkshopManager
                         btnAddNewCar.Visible = true;
                         btnCarApply.Visible = false;
                         btnCarCancel.Visible = false;
+                        btnCarDelete.Visible = true;
                         listViewCars.Items.Clear();
 
                         foreach (Car c in getAllCars().Where(c => c.IsDone))
@@ -372,6 +375,7 @@ namespace WorkshopManager
                         btnCarCancel.Visible = true;
                         groupBoxCarProperties.Visible = true;
                         btnAddNewCar.Visible = false;
+                        btnCarDelete.Visible = false;
 
                         currentlySelectedCar = null;
                         currentlyEditedCar = new Car();
@@ -385,8 +389,6 @@ namespace WorkshopManager
 
             }
         }
-
-       // private bool isValid = false;
 
         private bool IsValid
         {
