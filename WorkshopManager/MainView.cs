@@ -14,6 +14,7 @@ namespace WorkshopManager
     {
         #region EVENTS
         public event Func<List<Car>> getAllCars;
+        public event Func<Car,bool> addNewCar;
         public event Action<bool> loadData;
         public event Action<bool> saveData;
         #endregion
@@ -22,24 +23,34 @@ namespace WorkshopManager
         {
             loadData(true);
             RefreshAllData();
+           Mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
+
         }
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+            
 
-            if (currentlySelectedCar() == null) return;
             if (AreThereUnsavedChanges())
             {
 
                 DialogResult dialogResult = MessageBox.Show("Wygląda na to, że rozpoczęto edycję danych. Czy na pewno chcesz je odrzucić?", "Potwierdzenie odrzucenia zmian", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    DisplaySingleCarData(currentlySelectedCar());
+                    if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return; //nic nei jest zaznaczone
+                    CurrentlySelectedCar = listViewCars.SelectedItems[0].Tag as Car;
+
+                    DisplaySingleCarData(CurrentlySelectedCar);
                 }
             }
             else
-                DisplaySingleCarData(currentlySelectedCar());
-
+            {
+                if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return; //nic nei jest zaznaczone
+                CurrentlySelectedCar = listViewCars.SelectedItems[0].Tag as Car;
+                DisplaySingleCarData(CurrentlySelectedCar);
+            }
+              
 
 
         }
@@ -49,9 +60,9 @@ namespace WorkshopManager
         private void btnCarAddNewProblem_Click(object sender, EventArgs e)
         {
             if (tbNewCarProblemText.TextLength <= 0) return; //ERROR
-            currentlySelectedCar().problems.Add(new CarProblem(tbNewCarProblemText.Text));
+            CurrentlySelectedCar.problems.Add(new CarProblem(tbNewCarProblemText.Text));
             tbNewCarProblemText.Text = "";
-            DisplaySingleCarData(currentlySelectedCar());
+            DisplaySingleCarData(CurrentlySelectedCar);
         }
 
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
@@ -67,11 +78,11 @@ namespace WorkshopManager
             CarProblem p = listViewCarProblems.SelectedItems[0].Tag as CarProblem;
             try
             {
-                currentlySelectedCar().problems.Remove(p);
+                CurrentlySelectedCar.problems.Remove(p);
             
             }
             catch { } //ERROR nie udalo sie usunąć problemu z listy
-            DisplaySingleCarData(currentlySelectedCar());
+            DisplaySingleCarData(CurrentlySelectedCar);
         }
 
         private void comboBoxCarBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,7 +107,7 @@ namespace WorkshopManager
         private void btnCarApplyChanges_Click(object sender, EventArgs e)
         {
             //jakaś walidacja czy coś
-            Car tmp = currentlySelectedCar();
+            Car tmp = CurrentlySelectedCar;
             tmp = currentlyEditedCar;
             RefreshAllData();
         }
@@ -125,7 +136,8 @@ namespace WorkshopManager
                 currentlyEditedCar.IsDone = false;
             if (comboBoxCarStatus.SelectedIndex == 1)
                 currentlyEditedCar.IsDone = true;
-            RefreshAllData();
+           // if(Mode!=CarEditorMode.New)
+             //RefreshAllData();
         }
         #endregion
         #region PRIVATE
@@ -133,7 +145,10 @@ namespace WorkshopManager
         private void RefreshAllData()
         {
             Mode = Mode;
-            DisplaySingleCarData(currentlySelectedCar());
+           
+            DisplaySingleCarData(CurrentlySelectedCar);
+           
+
         }
         private void DisplaySingleCarData(Car c)
         {
@@ -178,16 +193,25 @@ namespace WorkshopManager
             }
         }
 
-        private Car currentlySelectedCar()
+        private Car currentlySelectedCar;
+        private Car CurrentlySelectedCar 
         {
-            if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return null; //nic nei jest zaznaczone
-            return listViewCars.SelectedItems[0].Tag as Car;
+            set
+            {
+                currentlySelectedCar=value;
+            }
+            get
+            { 
+               // if (Mode == CarEditorMode.New) return new Car();
+                  return currentlySelectedCar;
+            }
 
         }
 
         private bool AreThereUnsavedChanges()
         {
-            Car original = currentlySelectedCar();
+            Car original = CurrentlySelectedCar;
+            if (original == null) return false;
             if (currentlyEditedCar != null && !currentlyEditedCar.Equals(original)) return true;
             return false;
         }
@@ -214,8 +238,13 @@ namespace WorkshopManager
                         btnSwitchCarListMode.Text = "Przełącz na archiwum";
                         listViewCars.Visible = true;
                         btnAddNewCar.Visible = true;
+                        btnCarApply.Visible = true;
+                        btnSwitchCarListMode.Visible = true;
+                        btnCarApply.Text = "Zapisz";
+                        btnCarCancel.Visible = true;
                         listViewCars.Items.Clear();
-                        foreach (Car c in getAllCars().Where(c => !c.IsDone))
+                        ///List<Car> allCars = getAllCars();
+                        foreach (Car c in getAllCars().Where(c => c!=null && !c.IsDone))
                         {
                             currentItem = new ListViewItem();
                             currentItem.Tag = c;
@@ -223,13 +252,19 @@ namespace WorkshopManager
                             currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
                             listViewCars.Items.Add(currentItem);
                         }
+                        currentlyEditedCar = null;
+                        DisplaySingleCarData(CurrentlySelectedCar);
+
                         break;
                     case CarEditorMode.Done:
                         lCarListHeader.Visible = true;
                         lCarListHeader.Text = "Lista naprawionych samochodów";
                         btnSwitchCarListMode.Text = "Przełącz na aktywne";
+                        btnSwitchCarListMode.Visible = true;
                         listViewCars.Visible = true;
                         btnAddNewCar.Visible = true;
+                        btnCarApply.Visible = false;
+                        btnCarCancel.Visible = false;
                         listViewCars.Items.Clear();
 
                         foreach (Car c in getAllCars().Where(c => c.IsDone))
@@ -240,21 +275,28 @@ namespace WorkshopManager
                             currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
                             listViewCars.Items.Add(currentItem);
                         }
+                        currentlyEditedCar = null;
+                        DisplaySingleCarData(CurrentlySelectedCar);
+
                         break;
                     case CarEditorMode.New:
                         lCarListHeader.Visible = false;
                         btnSwitchCarListMode.Visible = false;
                         listViewCars.Visible = false;
                         btnAddNewCar.Visible = false;
+                        btnCarApply.Visible = true;
+                        btnCarApply.Text = "Dodaj";
+                        btnCarCancel.Visible = true;
+                        groupBoxCarProperties.Visible = true;
+                        btnAddNewCar.Visible = false;
 
+                        currentlySelectedCar = null;
+                        currentlyEditedCar = new Car();
+                        DisplaySingleCarData(currentlyEditedCar);
 
                         break;
-
-
                 }
-                currentlyEditedCar = null;
-                DisplaySingleCarData(currentlySelectedCar());
-                
+                  
                 _mode = value;
 
 
@@ -266,8 +308,17 @@ namespace WorkshopManager
         public MainView()
         {
             InitializeComponent();
-            _mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
-        }  
-       
+        }
+
+        private void btnCarApply_Click(object sender, EventArgs e)
+        {
+          
+            //walidacja poprawności wprowadzonych danych
+           if( addNewCar(currentlyEditedCar))
+            { 
+            // RefreshAllData();
+                Mode = CarEditorMode.Active;
+            }
+        }
     }
 }

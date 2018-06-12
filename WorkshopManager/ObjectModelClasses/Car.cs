@@ -8,11 +8,11 @@ namespace WorkshopManager
 {
     public class Car
     {
-        private bool isDone;
+        private bool isDone = false;
         private string brand;
         private string model;
         private string engine;
-        private uint year;
+        private uint year =1990;
 
         public List<CarProblem> problems;
 
@@ -30,7 +30,9 @@ namespace WorkshopManager
         }
         public override bool Equals(object obj)
         {
+            //if (obj == null) return false;
             var comparedCar = obj as Car;
+            if (comparedCar == null) return false;
             if (IsDone != comparedCar.IsDone) return false;
             if (Brand != comparedCar.Brand) return false;
             if (Model != comparedCar.Model) return false;
@@ -59,7 +61,15 @@ namespace WorkshopManager
         }
 
         
-        //  public Car()
+          public Car()
+        {
+            IsDone = false;
+            Brand = "";
+            Model = "";
+            Engine = "";
+            Year = 1996;
+            problems = new List<CarProblem>();
+        }
     }
 
     

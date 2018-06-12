@@ -18,6 +18,14 @@ namespace WorkshopManager
             view.loadData += _loadData;
             view.saveData += _saveData;
             view.getAllCars += _getAllCars;
+            view.addNewCar += View_addNewCar;
+        }
+
+        private bool View_addNewCar(Car arg)
+        {
+            try
+            { model.AddNewCar(arg); return true; }
+            catch { MessageBox.Show("Nie udało się dodać pojazdu"); return false; }
         }
 
         private void _saveData(bool obj)

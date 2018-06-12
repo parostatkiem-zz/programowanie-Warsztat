@@ -14,6 +14,13 @@ namespace WorkshopManager
         public void LoadDataFromFiles()
         {
             Cars = JsonConvert.DeserializeObject<List<Car>>(File.ReadAllText("data_cars.json"));
+            if (Cars == null)
+            {
+                Cars = new List<Car>();
+                throw new Exception("The file appears to be empty");
+               
+            }
+
         }
 
         public void SaveDataToFiles()
@@ -22,6 +29,12 @@ namespace WorkshopManager
             {
                 sw.Write(JsonConvert.SerializeObject(Cars));
             }
+        }
+
+        public void AddNewCar(Car c)
+        {
+            if (c == null) throw new Exception("Given car appears to be null") ;
+            Cars.Add(c);
         }
     }
 }

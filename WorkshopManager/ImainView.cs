@@ -10,6 +10,7 @@ namespace WorkshopManager
         event Action<bool> loadData;
         event Action<bool> saveData;
         event Func<List<Car>> getAllCars;
-    
+        event Func<Car, bool> addNewCar;
+
     }
 }
