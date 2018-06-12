@@ -25,8 +25,8 @@ namespace WorkshopManager
 
         public uint ProblemAmount()
         {
-            // return (uint)problems.Count;
-            return 0;
+             return (uint)problems.Where(p => !p.IsFixed).Count();
+          
         }
         public override bool Equals(object obj)
         {

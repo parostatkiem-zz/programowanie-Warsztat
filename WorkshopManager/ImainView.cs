@@ -11,6 +11,7 @@ namespace WorkshopManager
         event Action<bool> saveData;
         event Func<List<Car>> getAllCars;
         event Func<Car, bool> addNewCar;
+        event Func<Car, bool> deleteCar;
         event Func<Car, Car, bool> editCar;
 
     }

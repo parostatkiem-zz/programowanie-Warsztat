@@ -20,6 +20,14 @@ namespace WorkshopManager
             view.getAllCars += _getAllCars;
             view.addNewCar += View_addNewCar;
             view.editCar += View_editCar;
+            view.deleteCar += View_deleteCar;
+        }
+
+        private bool View_deleteCar(Car arg)
+        {
+            try
+            { model.DeleteCar(arg); return true; }
+            catch { MessageBox.Show("Nie udało się usunąć pojazdu"); return false; }
         }
 
         private bool View_editCar(Car source, Car dest)

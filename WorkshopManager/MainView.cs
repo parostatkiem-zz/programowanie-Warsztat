@@ -15,6 +15,7 @@ namespace WorkshopManager
         #region EVENTS
         public event Func<List<Car>> getAllCars;
         public event Func<Car,bool> addNewCar;
+        public event Func<Car, bool> deleteCar;
         public event Func<Car,Car, bool> editCar;
         public event Action<bool> loadData;
         public event Action<bool> saveData;
@@ -140,6 +141,69 @@ namespace WorkshopManager
                 currentlyEditedCar.IsDone = true;
            // if(Mode!=CarEditorMode.New)
              //RefreshAllData();
+        }
+
+        private void btnCarApply_Click(object sender, EventArgs e)
+        {
+
+            //walidacja poprawności wprowadzonych danych
+            if (Mode == CarEditorMode.New)
+            {
+                if (addNewCar(currentlyEditedCar))
+                {
+                    // RefreshAllData();
+                    Mode = CarEditorMode.Active;
+                    return;
+                }
+            }
+            if (Mode == CarEditorMode.Active)
+            {
+                //edycja samochodu
+                // currentlySelectedCar = currentlyEditedCar;
+                editCar(CurrentlySelectedCar, currentlyEditedCar);
+                CurrentlySelectedCar = currentlyEditedCar;
+                RefreshAllData();
+            }
+        }
+
+        private void listViewCarProblems_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            try
+            {
+                var selectedItem = e.Item.Tag as CarProblem;
+                if (selectedItem == null) return;
+
+                selectedItem.IsFixed = e.Item.Checked;
+            }
+            catch { }
+
+        }
+
+        private void btnCarCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz odrzucić wprowadzone zmiany?", "Potwierdzenie odrzucenia zmian", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            currentlyEditedCar = currentlySelectedCar;
+            DisplaySingleCarData(currentlySelectedCar);
+        }
+
+        private void btnCarDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąc zaznaczony samochód?\nOperacja ta jest nieodwracalna!", "Potwierdzenie usunięcia samochodu", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            deleteCar(CurrentlySelectedCar);
+            CurrentlySelectedCar = null;
+            RefreshAllData();
+        }
+        private void numericUpDownCarYear_ValueChanged(object sender, EventArgs e)
+        {
+            currentlyEditedCar.Year = (uint)numericUpDownCarYear.Value;
         }
         #endregion
         #region PRIVATE
@@ -274,7 +338,7 @@ namespace WorkshopManager
                             currentItem = new ListViewItem();
                             currentItem.Tag = c;
                             currentItem.Text = c.Brand;
-                            currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString() });
+                            currentItem.SubItems.AddRange(new string[] { c.Model, c.Year.ToString(), c.ProblemAmount().ToString()});
                             listViewCars.Items.Add(currentItem);
                         }
                         currentlyEditedCar = null;
@@ -312,45 +376,6 @@ namespace WorkshopManager
             InitializeComponent();
         }
 
-        private void btnCarApply_Click(object sender, EventArgs e)
-        {
-
-            //walidacja poprawności wprowadzonych danych
-            if (Mode == CarEditorMode.New)
-            {
-                if (addNewCar(currentlyEditedCar))
-                {
-                    // RefreshAllData();
-                    Mode = CarEditorMode.Active;
-                }
-            }
-            if (Mode == CarEditorMode.Active)
-            {
-                //edycja samochodu
-                // currentlySelectedCar = currentlyEditedCar;
-                editCar(CurrentlySelectedCar, currentlyEditedCar);
-                CurrentlySelectedCar = currentlyEditedCar;
-                RefreshAllData();
-            }
-        }
-
-        private void listViewCarProblems_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            try
-            {
-                var selectedItem = e.Item.Tag as CarProblem;
-                if (selectedItem == null) return;
-
-                selectedItem.IsFixed = e.Item.Checked;
-            }
-            catch { }
-
-        }
-
-        private void btnCarCancel_Click(object sender, EventArgs e)
-        {
-            currentlyEditedCar = currentlySelectedCar;
-            DisplaySingleCarData(currentlySelectedCar);
-        }
+        
     }
 }
