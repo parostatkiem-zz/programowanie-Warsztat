@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("test");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
             System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            "Naciągnąc linkę ręcznego"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Nie działa wycieraczka");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Piszczenie paska w silniku");
             System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            "Spore wgniecenia na drzwiach LP"}, -1, System.Drawing.SystemColors.ControlDarkDark, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Ściąganie kierownicy podczas jazdy");
             System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            "Olej 5W40 ELF"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
             System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Olej 5W40 LIQUI MOLY"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pasek pompy wody MAXGEAR"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pompa wody DELPHI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Pompa wody FEBI"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
             "Uszczelka pokrywy zaworów RINZ"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, null);
             this.listViewCars = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,6 +64,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAddNewCar = new System.Windows.Forms.Button();
             this.groupBoxCarProperties = new System.Windows.Forms.GroupBox();
+            this.btnCarDelete = new System.Windows.Forms.Button();
             this.btnCarCancel = new System.Windows.Forms.Button();
             this.btnCarApply = new System.Windows.Forms.Button();
             this.comboBoxCarStatus = new System.Windows.Forms.ComboBox();
@@ -96,7 +97,6 @@
             this.lPartBrandDesc = new System.Windows.Forms.Label();
             this.lPartsDesc = new System.Windows.Forms.Label();
             this.listViewParts = new System.Windows.Forms.ListView();
-            this.btnCarDelete = new System.Windows.Forms.Button();
             this.carErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -113,6 +113,7 @@
             this.listViewCars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewCars.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(198)))));
             this.listViewCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -227,12 +228,14 @@
             // btnAddNewCar
             // 
             this.btnAddNewCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewCar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAddNewCar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddNewCar.Location = new System.Drawing.Point(292, 3);
             this.btnAddNewCar.Name = "btnAddNewCar";
             this.btnAddNewCar.Size = new System.Drawing.Size(137, 23);
             this.btnAddNewCar.TabIndex = 4;
             this.btnAddNewCar.Text = "Dodaj nowy";
-            this.btnAddNewCar.UseVisualStyleBackColor = true;
+            this.btnAddNewCar.UseVisualStyleBackColor = false;
             this.btnAddNewCar.Click += new System.EventHandler(this.btnAddNewCar_Click);
             // 
             // groupBoxCarProperties
@@ -264,26 +267,43 @@
             this.groupBoxCarProperties.TabStop = false;
             this.groupBoxCarProperties.Text = "Właścidowści samochodu";
             // 
+            // btnCarDelete
+            // 
+            this.btnCarDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnCarDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCarDelete.Location = new System.Drawing.Point(326, 16);
+            this.btnCarDelete.Name = "btnCarDelete";
+            this.btnCarDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnCarDelete.TabIndex = 18;
+            this.btnCarDelete.Text = "Usuń";
+            this.btnCarDelete.UseVisualStyleBackColor = false;
+            this.btnCarDelete.Click += new System.EventHandler(this.btnCarDelete_Click);
+            // 
             // btnCarCancel
             // 
             this.btnCarCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarCancel.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCarCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarCancel.Location = new System.Drawing.Point(407, 16);
             this.btnCarCancel.Name = "btnCarCancel";
             this.btnCarCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCarCancel.TabIndex = 17;
             this.btnCarCancel.Text = "Anuluj";
-            this.btnCarCancel.UseVisualStyleBackColor = true;
+            this.btnCarCancel.UseVisualStyleBackColor = false;
             this.btnCarCancel.Click += new System.EventHandler(this.btnCarCancel_Click);
             // 
             // btnCarApply
             // 
             this.btnCarApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarApply.BackColor = System.Drawing.Color.LightGreen;
+            this.btnCarApply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarApply.Location = new System.Drawing.Point(488, 16);
             this.btnCarApply.Name = "btnCarApply";
             this.btnCarApply.Size = new System.Drawing.Size(75, 23);
             this.btnCarApply.TabIndex = 16;
             this.btnCarApply.Text = "Zapisz";
-            this.btnCarApply.UseVisualStyleBackColor = true;
+            this.btnCarApply.UseVisualStyleBackColor = false;
             this.btnCarApply.Click += new System.EventHandler(this.btnCarApply_Click);
             // 
             // comboBoxCarStatus
@@ -312,6 +332,7 @@
             // 
             this.tbNewCarProblemText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNewCarProblemText.BackColor = System.Drawing.Color.LightBlue;
             this.tbNewCarProblemText.Location = new System.Drawing.Point(188, 123);
             this.tbNewCarProblemText.Name = "tbNewCarProblemText";
             this.tbNewCarProblemText.Size = new System.Drawing.Size(218, 20);
@@ -336,7 +357,7 @@
             // 
             this.tbCarModel.Location = new System.Drawing.Point(107, 46);
             this.tbCarModel.Name = "tbCarModel";
-            this.tbCarModel.Size = new System.Drawing.Size(100, 20);
+            this.tbCarModel.Size = new System.Drawing.Size(121, 20);
             this.tbCarModel.TabIndex = 11;
             this.tbCarModel.TextChanged += new System.EventHandler(this.tbCarModel_TextChanged);
             // 
@@ -367,29 +388,33 @@
             // 
             this.tbCarEngine.Location = new System.Drawing.Point(107, 70);
             this.tbCarEngine.Name = "tbCarEngine";
-            this.tbCarEngine.Size = new System.Drawing.Size(100, 20);
+            this.tbCarEngine.Size = new System.Drawing.Size(121, 20);
             this.tbCarEngine.TabIndex = 9;
             this.tbCarEngine.TextChanged += new System.EventHandler(this.tbCarEngine_TextChanged);
             // 
             // btnCarRemoveProblem
             // 
             this.btnCarRemoveProblem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarRemoveProblem.BackColor = System.Drawing.Color.Thistle;
+            this.btnCarRemoveProblem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarRemoveProblem.Location = new System.Drawing.Point(445, 121);
             this.btnCarRemoveProblem.Name = "btnCarRemoveProblem";
             this.btnCarRemoveProblem.Size = new System.Drawing.Size(114, 23);
             this.btnCarRemoveProblem.TabIndex = 7;
             this.btnCarRemoveProblem.Text = "Usuń zaznaczony";
-            this.btnCarRemoveProblem.UseVisualStyleBackColor = true;
+            this.btnCarRemoveProblem.UseVisualStyleBackColor = false;
             this.btnCarRemoveProblem.Click += new System.EventHandler(this.btnCarRemoveProblem_Click);
             // 
             // btnCarAddNewProblem
             // 
+            this.btnCarAddNewProblem.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCarAddNewProblem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarAddNewProblem.Location = new System.Drawing.Point(107, 121);
             this.btnCarAddNewProblem.Name = "btnCarAddNewProblem";
             this.btnCarAddNewProblem.Size = new System.Drawing.Size(75, 23);
             this.btnCarAddNewProblem.TabIndex = 6;
             this.btnCarAddNewProblem.Text = "Dodaj nowy";
-            this.btnCarAddNewProblem.UseVisualStyleBackColor = true;
+            this.btnCarAddNewProblem.UseVisualStyleBackColor = false;
             this.btnCarAddNewProblem.Click += new System.EventHandler(this.btnCarAddNewProblem_Click);
             // 
             // lCarProblemsHeader
@@ -405,21 +430,22 @@
             // 
             this.listViewCarProblems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewCarProblems.BackColor = System.Drawing.Color.LightBlue;
             this.listViewCarProblems.CheckBoxes = true;
             this.listViewCarProblems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem22.Checked = true;
-            listViewItem22.StateImageIndex = 1;
-            listViewItem23.StateImageIndex = 0;
-            listViewItem24.StateImageIndex = 0;
-            listViewItem25.Checked = true;
-            listViewItem25.StateImageIndex = 1;
-            listViewItem26.StateImageIndex = 0;
+            listViewItem15.Checked = true;
+            listViewItem15.StateImageIndex = 1;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.Checked = true;
+            listViewItem18.StateImageIndex = 1;
+            listViewItem19.StateImageIndex = 0;
             this.listViewCarProblems.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26});
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19});
             this.listViewCarProblems.Location = new System.Drawing.Point(6, 145);
             this.listViewCarProblems.MultiSelect = false;
             this.listViewCarProblems.Name = "listViewCarProblems";
@@ -469,12 +495,14 @@
             // btnSwitchCarListMode
             // 
             this.btnSwitchCarListMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSwitchCarListMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(198)))));
+            this.btnSwitchCarListMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSwitchCarListMode.Location = new System.Drawing.Point(435, 3);
             this.btnSwitchCarListMode.Name = "btnSwitchCarListMode";
             this.btnSwitchCarListMode.Size = new System.Drawing.Size(137, 23);
             this.btnSwitchCarListMode.TabIndex = 2;
             this.btnSwitchCarListMode.Text = "Przełącz na archiwum";
-            this.btnSwitchCarListMode.UseVisualStyleBackColor = true;
+            this.btnSwitchCarListMode.UseVisualStyleBackColor = false;
             this.btnSwitchCarListMode.Click += new System.EventHandler(this.btnSwitchCarListMode_Click);
             // 
             // groupBoxPartProperties
@@ -619,21 +647,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            listViewItem15.StateImageIndex = 0;
-            listViewItem16.Checked = true;
-            listViewItem16.StateImageIndex = 1;
-            listViewItem17.StateImageIndex = 0;
-            listViewItem18.Checked = true;
-            listViewItem18.StateImageIndex = 1;
-            listViewItem21.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.Checked = true;
+            listViewItem21.StateImageIndex = 1;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.Checked = true;
+            listViewItem23.StateImageIndex = 1;
+            listViewItem26.StateImageIndex = 0;
             this.listViewParts.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
             listViewItem20,
-            listViewItem21});
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26});
             this.listViewParts.Location = new System.Drawing.Point(3, 111);
             this.listViewParts.MultiSelect = false;
             this.listViewParts.Name = "listViewParts";
@@ -643,17 +671,6 @@
             this.listViewParts.TabIndex = 9;
             this.listViewParts.UseCompatibleStateImageBehavior = false;
             this.listViewParts.View = System.Windows.Forms.View.List;
-            // 
-            // btnCarDelete
-            // 
-            this.btnCarDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCarDelete.Location = new System.Drawing.Point(326, 16);
-            this.btnCarDelete.Name = "btnCarDelete";
-            this.btnCarDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnCarDelete.TabIndex = 18;
-            this.btnCarDelete.Text = "Usuń";
-            this.btnCarDelete.UseVisualStyleBackColor = true;
-            this.btnCarDelete.Click += new System.EventHandler(this.btnCarDelete_Click);
             // 
             // carErrorProvider
             // 
