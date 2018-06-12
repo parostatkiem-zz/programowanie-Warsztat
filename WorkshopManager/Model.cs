@@ -36,5 +36,11 @@ namespace WorkshopManager
             if (c == null) throw new Exception("Given car appears to be null") ;
             Cars.Add(c);
         }
+        public void EditCar(Car old, Car afterEdition)
+        {
+            if (old == null || afterEdition==null) throw new Exception("Given cars appears to be null");
+            Cars[Cars.IndexOf(old)] = afterEdition;
+
+        }
     }
 }

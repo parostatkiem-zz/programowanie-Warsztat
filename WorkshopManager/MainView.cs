@@ -15,21 +15,22 @@ namespace WorkshopManager
         #region EVENTS
         public event Func<List<Car>> getAllCars;
         public event Func<Car,bool> addNewCar;
+        public event Func<Car,Car, bool> editCar;
         public event Action<bool> loadData;
         public event Action<bool> saveData;
         #endregion
         #region GENERATED_EVENTS
         private void MainView_Load(object sender, EventArgs e)
         {
-            loadData(true);
-            RefreshAllData();
+           loadData(true);
+           RefreshAllData();
            Mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
 
         }
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (listViewCars.SelectedItems.Count <= 0) return;
             
 
             if (AreThereUnsavedChanges())
@@ -40,15 +41,16 @@ namespace WorkshopManager
                 {
                     if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return; //nic nei jest zaznaczone
                     CurrentlySelectedCar = listViewCars.SelectedItems[0].Tag as Car;
-
-                    DisplaySingleCarData(CurrentlySelectedCar);
+                    currentlyEditedCar = currentlySelectedCar;
+                    DisplaySingleCarData(currentlyEditedCar);
                 }
             }
             else
             {
                 if (listViewCars.SelectedItems.Count <= 0 || listViewCars.SelectedItems[0].Tag == null) return; //nic nei jest zaznaczone
                 CurrentlySelectedCar = listViewCars.SelectedItems[0].Tag as Car;
-                DisplaySingleCarData(CurrentlySelectedCar);
+                currentlyEditedCar = currentlySelectedCar;
+                DisplaySingleCarData(currentlyEditedCar);
             }
               
 
@@ -60,9 +62,9 @@ namespace WorkshopManager
         private void btnCarAddNewProblem_Click(object sender, EventArgs e)
         {
             if (tbNewCarProblemText.TextLength <= 0) return; //ERROR
-            CurrentlySelectedCar.problems.Add(new CarProblem(tbNewCarProblemText.Text));
+            currentlyEditedCar.problems.Add(new CarProblem(tbNewCarProblemText.Text));
             tbNewCarProblemText.Text = "";
-            DisplaySingleCarData(CurrentlySelectedCar);
+            DisplaySingleCarData(currentlyEditedCar);
         }
 
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,11 +80,11 @@ namespace WorkshopManager
             CarProblem p = listViewCarProblems.SelectedItems[0].Tag as CarProblem;
             try
             {
-                CurrentlySelectedCar.problems.Remove(p);
+                currentlyEditedCar.problems.Remove(p);
             
             }
             catch { } //ERROR nie udalo sie usunąć problemu z listy
-            DisplaySingleCarData(CurrentlySelectedCar);
+            DisplaySingleCarData(currentlyEditedCar);
         }
 
         private void comboBoxCarBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,7 +148,7 @@ namespace WorkshopManager
         {
             Mode = Mode;
            
-            DisplaySingleCarData(CurrentlySelectedCar);
+           // DisplaySingleCarData(CurrentlySelectedCar);
            
 
         }
@@ -312,13 +314,43 @@ namespace WorkshopManager
 
         private void btnCarApply_Click(object sender, EventArgs e)
         {
-          
+
             //walidacja poprawności wprowadzonych danych
-           if( addNewCar(currentlyEditedCar))
-            { 
-            // RefreshAllData();
-                Mode = CarEditorMode.Active;
+            if (Mode == CarEditorMode.New)
+            {
+                if (addNewCar(currentlyEditedCar))
+                {
+                    // RefreshAllData();
+                    Mode = CarEditorMode.Active;
+                }
             }
+            if (Mode == CarEditorMode.Active)
+            {
+                //edycja samochodu
+                // currentlySelectedCar = currentlyEditedCar;
+                editCar(CurrentlySelectedCar, currentlyEditedCar);
+                CurrentlySelectedCar = currentlyEditedCar;
+                RefreshAllData();
+            }
+        }
+
+        private void listViewCarProblems_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            try
+            {
+                var selectedItem = e.Item.Tag as CarProblem;
+                if (selectedItem == null) return;
+
+                selectedItem.IsFixed = e.Item.Checked;
+            }
+            catch { }
+
+        }
+
+        private void btnCarCancel_Click(object sender, EventArgs e)
+        {
+            currentlyEditedCar = currentlySelectedCar;
+            DisplaySingleCarData(currentlySelectedCar);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace WorkshopManager
             if (Model != comparedCar.Model) return false;
             if (Engine != comparedCar.Engine) return false;
             if (Year != comparedCar.Year) return false;
-
+            if (problems.Count != comparedCar.problems.Count) return false;
             if (problems.Count>0)
                 for(int i=0; i<problems.Count;i++)
                 {

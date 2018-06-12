@@ -19,6 +19,14 @@ namespace WorkshopManager
             view.saveData += _saveData;
             view.getAllCars += _getAllCars;
             view.addNewCar += View_addNewCar;
+            view.editCar += View_editCar;
+        }
+
+        private bool View_editCar(Car source, Car dest)
+        {
+            try
+            { model.EditCar(source,dest); return true; }
+            catch { MessageBox.Show("Nie udało się edytować pojazdu"); return false; }
         }
 
         private bool View_addNewCar(Car arg)

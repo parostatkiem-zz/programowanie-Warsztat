@@ -63,6 +63,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAddNewCar = new System.Windows.Forms.Button();
             this.groupBoxCarProperties = new System.Windows.Forms.GroupBox();
+            this.btnCarCancel = new System.Windows.Forms.Button();
+            this.btnCarApply = new System.Windows.Forms.Button();
             this.comboBoxCarStatus = new System.Windows.Forms.ComboBox();
             this.lCarStatusDesc = new System.Windows.Forms.Label();
             this.tbNewCarProblemText = new System.Windows.Forms.TextBox();
@@ -93,8 +95,6 @@
             this.lPartBrandDesc = new System.Windows.Forms.Label();
             this.lPartsDesc = new System.Windows.Forms.Label();
             this.listViewParts = new System.Windows.Forms.ListView();
-            this.btnCarApply = new System.Windows.Forms.Button();
-            this.btnCarCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -259,6 +259,28 @@
             this.groupBoxCarProperties.TabStop = false;
             this.groupBoxCarProperties.Text = "Właścidowści samochodu";
             // 
+            // btnCarCancel
+            // 
+            this.btnCarCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarCancel.Location = new System.Drawing.Point(407, 16);
+            this.btnCarCancel.Name = "btnCarCancel";
+            this.btnCarCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCarCancel.TabIndex = 17;
+            this.btnCarCancel.Text = "Anuluj";
+            this.btnCarCancel.UseVisualStyleBackColor = true;
+            this.btnCarCancel.Click += new System.EventHandler(this.btnCarCancel_Click);
+            // 
+            // btnCarApply
+            // 
+            this.btnCarApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarApply.Location = new System.Drawing.Point(488, 16);
+            this.btnCarApply.Name = "btnCarApply";
+            this.btnCarApply.Size = new System.Drawing.Size(75, 23);
+            this.btnCarApply.TabIndex = 16;
+            this.btnCarApply.Text = "Zapisz";
+            this.btnCarApply.UseVisualStyleBackColor = true;
+            this.btnCarApply.Click += new System.EventHandler(this.btnCarApply_Click);
+            // 
             // comboBoxCarStatus
             // 
             this.comboBoxCarStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -400,6 +422,7 @@
             this.listViewCarProblems.TabIndex = 4;
             this.listViewCarProblems.UseCompatibleStateImageBehavior = false;
             this.listViewCarProblems.View = System.Windows.Forms.View.List;
+            this.listViewCarProblems.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listViewCarProblems_ItemChecked);
             // 
             // lcarYearDesc
             // 
@@ -614,25 +637,6 @@
             this.listViewParts.TabIndex = 9;
             this.listViewParts.UseCompatibleStateImageBehavior = false;
             this.listViewParts.View = System.Windows.Forms.View.List;
-            // 
-            // btnCarApply
-            // 
-            this.btnCarApply.Location = new System.Drawing.Point(488, 16);
-            this.btnCarApply.Name = "btnCarApply";
-            this.btnCarApply.Size = new System.Drawing.Size(75, 23);
-            this.btnCarApply.TabIndex = 16;
-            this.btnCarApply.Text = "Zapisz";
-            this.btnCarApply.UseVisualStyleBackColor = true;
-            this.btnCarApply.Click += new System.EventHandler(this.btnCarApply_Click);
-            // 
-            // btnCarCancel
-            // 
-            this.btnCarCancel.Location = new System.Drawing.Point(407, 16);
-            this.btnCarCancel.Name = "btnCarCancel";
-            this.btnCarCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCarCancel.TabIndex = 17;
-            this.btnCarCancel.Text = "Anuluj";
-            this.btnCarCancel.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
