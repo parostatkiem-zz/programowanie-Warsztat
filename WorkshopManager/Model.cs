@@ -46,7 +46,8 @@ namespace WorkshopManager
         {
             if (old == null || afterEdition==null) throw new Exception("Given cars appears to be null");
             Cars[Cars.IndexOf(old)] = afterEdition;
-
+            
         }
+
     }
 }

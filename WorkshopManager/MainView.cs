@@ -62,7 +62,11 @@ namespace WorkshopManager
 
         private void btnCarAddNewProblem_Click(object sender, EventArgs e)
         {
-            if (tbNewCarProblemText.TextLength <= 0) return; //ERROR
+            if (tbNewCarProblemText.TextLength <= 0)
+            {
+                carErrorProvider.SetError(tbNewCarProblemText, "Ups, tu chyba powinno być coś wpisane...");
+                return;
+            }
             currentlyEditedCar.problems.Add(new CarProblem(tbNewCarProblemText.Text));
             tbNewCarProblemText.Text = "";
             DisplaySingleCarData(currentlyEditedCar);
@@ -92,18 +96,21 @@ namespace WorkshopManager
         {
             //walidacja poprawnosci
             currentlyEditedCar.Brand = comboBoxCarBrand.SelectedItem.ToString();
+            var a=IsValid;
         }
 
         private void tbCarModel_TextChanged(object sender, EventArgs e)
         {
             //walidacja poprawnosci
             currentlyEditedCar.Model = tbCarModel.Text;
+            var a = IsValid;
         }
 
         private void tbCarEngine_TextChanged(object sender, EventArgs e)
         {
             //walidacja poprawnosci
             currentlyEditedCar.Engine = tbCarEngine.Text;
+            var a = IsValid;
         }
 
 
@@ -119,6 +126,7 @@ namespace WorkshopManager
 
         private void btnSwitchCarListMode_Click(object sender, EventArgs e)
         {
+            CurrentlySelectedCar = null;
             if (Mode == CarEditorMode.Active)
             {
                 Mode = CarEditorMode.Done;
@@ -145,6 +153,12 @@ namespace WorkshopManager
 
         private void btnCarApply_Click(object sender, EventArgs e)
         {
+
+            if (!IsValid)
+            {
+                MessageBox.Show( "Wprowadzone dane nie wyglądają na poprawne..\nNajedź kursorem na migające wykrzykniki, by dowiedzieć się co jest nie tak", "ERROR");
+                return;
+            }
 
             //walidacja poprawności wprowadzonych danych
             if (Mode == CarEditorMode.New)
@@ -204,6 +218,7 @@ namespace WorkshopManager
         private void numericUpDownCarYear_ValueChanged(object sender, EventArgs e)
         {
             currentlyEditedCar.Year = (uint)numericUpDownCarYear.Value;
+            
         }
         #endregion
         #region PRIVATE
@@ -287,6 +302,7 @@ namespace WorkshopManager
             get { return _mode; }
             set
             {
+                
                 if (AreThereUnsavedChanges())
                 {
                     DialogResult dialogResult = MessageBox.Show("Wygląda na to, że rozpoczęto edycję danych. Czy na pewno chcesz je odrzucić?", "Potwierdzenie odrzucenia zmian", MessageBoxButtons.YesNo);
@@ -295,6 +311,7 @@ namespace WorkshopManager
                         return;
                     }
                 }
+                var a = IsValid;
                 ListViewItem currentItem;
                 switch (value)
                 {
@@ -309,7 +326,7 @@ namespace WorkshopManager
                         btnCarApply.Text = "Zapisz";
                         btnCarCancel.Visible = true;
                         listViewCars.Items.Clear();
-                        ///List<Car> allCars = getAllCars();
+
                         foreach (Car c in getAllCars().Where(c => c!=null && !c.IsDone))
                         {
                             currentItem = new ListViewItem();
@@ -367,6 +384,37 @@ namespace WorkshopManager
 
 
             }
+        }
+
+       // private bool isValid = false;
+
+        private bool IsValid
+        {
+            get
+            {
+                bool isValid = true;
+                carErrorProvider.Clear();
+
+                if (comboBoxCarBrand.SelectedItem == null)
+                {
+                    carErrorProvider.SetError(comboBoxCarBrand, "To pole nie może być puste");
+                    isValid = false;
+                }
+
+                if (tbCarModel.Text.Length <= 0)
+                {
+                    carErrorProvider.SetError(tbCarModel, "To pole nie może być puste");
+                    isValid = false;
+                }
+
+                if (numericUpDownCarYear.Value <= 1900)
+                {
+                    carErrorProvider.SetError(numericUpDownCarYear, "To nie wygląda na poprawną wartość");
+                    isValid = false;
+                }
+                return isValid;
+            }
+
         }
         #endregion
 
