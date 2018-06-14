@@ -13,14 +13,13 @@ namespace WorkshopManager
         public  List<Part> Parts;
         public void LoadDataFromFiles()
         {
+            Cars = new List<Car>();
             Cars = JsonConvert.DeserializeObject<List<Car>>(File.ReadAllText("data_cars.json"));
             if (Cars == null)
             {
                 Cars = new List<Car>();
                 throw new Exception("The file appears to be empty");
-               
             }
-
         }
 
         public void SaveDataToFiles()
@@ -45,8 +44,7 @@ namespace WorkshopManager
         public void EditCar(Car old, Car afterEdition)
         {
             if (old == null || afterEdition==null) throw new Exception("Given cars appears to be null");
-            Cars[Cars.IndexOf(old)] = afterEdition;
-            
+            Cars[Cars.IndexOf(old)] = afterEdition;    
         }
 
     }

@@ -26,7 +26,6 @@ namespace WorkshopManager
            loadData(true);
            RefreshAllData();
            Mode = CarEditorMode.Active; //domyślnie pokazuj aktywne samochody do naprawy
-
         }
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,10 +51,7 @@ namespace WorkshopManager
                 CurrentlySelectedCar = listViewCars.SelectedItems[0].Tag as Car;
                 currentlyEditedCar = currentlySelectedCar;
                 DisplaySingleCarData(currentlyEditedCar);
-            }
-              
-
-
+            }             
         }
 
 
@@ -87,7 +83,6 @@ namespace WorkshopManager
             try
             {
                 currentlyEditedCar.problems.Remove(p);
-            
             }
             catch { } //ERROR nie udalo sie usunąć problemu z listy
             DisplaySingleCarData(currentlyEditedCar);
@@ -124,7 +119,6 @@ namespace WorkshopManager
         }
 
 
-
         private void btnSwitchCarListMode_Click(object sender, EventArgs e)
         {
             CurrentlySelectedCar = null;
@@ -148,8 +142,6 @@ namespace WorkshopManager
                 currentlyEditedCar.IsDone = false;
             if (comboBoxCarStatus.SelectedIndex == 1)
                 currentlyEditedCar.IsDone = true;
-           // if(Mode!=CarEditorMode.New)
-             //RefreshAllData();
         }
 
         private void btnCarApply_Click(object sender, EventArgs e)
@@ -227,14 +219,10 @@ namespace WorkshopManager
         private void RefreshAllData()
         {
             Mode = Mode;
-           
-           // DisplaySingleCarData(CurrentlySelectedCar);
-           
 
         }
         private void DisplaySingleCarData(Car c)
         {
-           
             if (c == null)
             {
                 groupBoxCarProperties.Visible = false;
@@ -284,7 +272,6 @@ namespace WorkshopManager
             }
             get
             { 
-               // if (Mode == CarEditorMode.New) return new Car();
                   return currentlySelectedCar;
             }
 
@@ -312,7 +299,6 @@ namespace WorkshopManager
                         return;
                     }
                 }
-                //var a = IsValid;
                 ListViewItem currentItem;
                 switch (value)
                 {
@@ -382,11 +368,8 @@ namespace WorkshopManager
                         DisplaySingleCarData(currentlyEditedCar);
 
                         break;
-                }
-                  
+                } 
                 _mode = value;
-
-
             }
         }
 
