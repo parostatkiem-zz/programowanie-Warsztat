@@ -14,7 +14,7 @@ namespace WorkshopManager
         private string engine;
         private uint year =1990;
 
-        public List<CarProblem> problems;
+        public List<CarProblem> problems { get; set; }
 
         public bool IsDone{get;set; }
         public string Brand { get; set; }
